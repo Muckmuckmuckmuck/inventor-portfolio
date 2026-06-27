@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VisionGrip · Invention 001 · Jay Reddy</title>
+  <meta name="description" content="VisionGrip is a context aware prosthetic arm that fuses neural intent sensing with fingertip cameras to pre-shape its grip before contact. Full design, schematics, feasibility analysis, and prototyping plan." />
+  <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'&gt;&lt;rect width='32' height='32' rx='8' fill='%231f6feb'/&gt;&lt;text x='16' y='22' font-family='monospace' font-size='16' fill='white' text-anchor='middle'&gt;JR&lt;/text&gt;&lt;/svg&gt;" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;550;600;700;750;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav">
+    <div class="wrap nav__inner">
+      <a class="brand" href="../index.html"><span class="brand__mark">JR</span><span>Jay Reddy</span></a>
+      <button class="nav__toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <nav class="nav__links">
+        <a href="../index.html#inventions">All inventions</a>
+        <a href="../index.html#about">Inventor</a>
+        <a href="visiongrip.html">001 · VisionGrip</a>
+        <a href="productivityflows.html">002 · ProductivityFlows</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== HEADER ===================== -->
+  <section class="inv-header">
+    <div class="inv-header__grid" aria-hidden="true"></div>
+    <div class="wrap inv-header__inner">
+      <div class="breadcrumb"><a href="../index.html">Catalog</a> / Invention 001</div>
+      <h1>VisionGrip <span class="codename">// context aware neural prosthetic</span></h1>
+      <p class="hero__sub" style="margin-top:.6rem">An AI driven prosthetic arm that pre-shapes its own grip before it touches an object.</p>
+      <div class="inv-meta">
+        <div><div class="k">Date conceived</div><div class="v">March 2025</div></div>
+        <div><div class="k">Status</div><div class="v">Concept · pre-prototype</div></div>
+        <div><div class="k">Domain</div><div class="v">Biomechanics · Robotics</div></div>
+        <div><div class="k">Inventor</div><div class="v">Jay Reddy</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DOC ===================== -->
+  <div class="section">
+    <div class="wrap doc">
+
+      <!-- TOC -->
+      <aside class="toc">
+        <h4>On this page</h4>
+        <ol>
+          <li><a href="#overview">01 · Overview</a></li>
+          <li><a href="#problem">02 · The problem</a></li>
+          <li><a href="#description">03 · Detailed description</a></li>
+          <li><a href="#schematics">04 · Schematics and diagrams</a></li>
+          <li><a href="#components">05 · Key components</a></li>
+          <li><a href="#modes">06 · Control modes</a></li>
+          <li><a href="#applications">07 · Potential applications</a></li>
+          <li><a href="#feasibility">08 · Technical feasibility</a></li>
+          <li><a href="#variations">09 · Improvements and variations</a></li>
+          <li><a href="#roadmap">10 · Prototyping roadmap</a></li>
+          <li><a href="#ethics">11 · Safety and ethics</a></li>
+          <li><a href="#risks">12 · Risks and open questions</a></li>
+        </ol>
+      </aside>
+
+      <!-- BODY -->
+      <div class="doc__body">
+
+        <!-- 01 Overview -->
+        <section id="overview" class="reveal">
+          <h2 data-no="01">Overview</h2>
+          <p class="lead">VisionGrip is an advanced prosthetic arm for above-elbow and below-elbow amputees. Instead
+            of asking the user to drive every small movement through muscle signals, the arm works as a
+            semi-autonomous partner.</p>
+          <p>It combines neural intent sensors at the residual limb with a dense array of micro cameras. The cameras
+            read the immediate environment while the intent sensors read what the user wants to do. When a user
+            reaches for a basketball, the cameras track the ball's size, distance, and speed, and the hand moves into
+            the correct catching posture and grip pressure before contact is made. The user supplies the goal. The
+            arm works out the precise mechanics to reach it.</p>
+          <div class="callout callout--note">
+            <strong>The core idea</strong>
+            <p>Most prosthetic control fails because it forces a person to consciously manage dozens of small joint
+              movements. VisionGrip moves that burden to the machine. The person aims and commits. The hand handles
+              the geometry.</p>
+          </div>
+        </section>
+
+        <!-- 02 Problem -->
+        <section id="problem" class="reveal">
+          <h2 data-no="02">The problem being solved</h2>
+          <p>Today's myoelectric prosthetics read muscle signals from the residual limb and map them to a small set
+            of grips. That approach has real limits, and many users abandon their devices because of them.</p>
+          <ul class="flist">
+            <li><strong>High mental load.</strong> The user has to consciously trigger and hold each movement through muscle contractions. Simple tasks take constant attention.</li>
+            <li><strong>Noisy, coarse signals.</strong> Surface muscle readings drift with sweat, fatigue, and electrode shift. Fine control is hard to sustain.</li>
+            <li><strong>Slow grip selection.</strong> Switching between grip types often means cycling through a menu of patterns, which is too slow for anything fast or unexpected.</li>
+            <li><strong>No awareness of the object.</strong> The hand does not know if it is about to hold an egg or a hammer. The user has to supply all of that judgment manually.</li>
+            <li><strong>Abandonment.</strong> Studies of upper-limb prosthetics report that a meaningful share of users stop wearing their devices, often citing effort and limited function.</li>
+          </ul>
+          <p>VisionGrip targets the root cause. If the hand can see the object and infer intent, it can take over the
+            fine motor planning that currently exhausts the user.</p>
+        </section>
+
+        <!-- 03 Detailed description -->
+        <section id="description" class="reveal">
+          <h2 data-no="03">Detailed description</h2>
+          <p>The system is organized into five subsystems that pass data around a single closed loop. Each is
+            described below, and the schematics in the next section show how they physically sit on the arm.</p>
+
+          <h3>1. Visual sensory array</h3>
+          <p>High framerate micro cameras are embedded in the fingertips, the palm, the back of the hand, and the
+            wrist. The fingertip and palm cameras give close range detail for the final grip. The wrist camera gives a
+            wider view for reaching and for tracking fast moving targets. Together they map the immediate space,
+            estimate an object's size and likely fragility, and follow moving objects.</p>
+
+          <h3>2. Intent sensory array</h3>
+          <p>A non-invasive electromyography band, or a neural interface band, sits at the attachment site. It does
+            not try to decode every finger. It reads the user's base intention, such as reach, pull, open, or commit
+            to a grasp. This coarse signal is reliable and fast, which is exactly what the planner needs.</p>
+
+          <h3>3. Processing unit</h3>
+          <p>An onboard edge AI chip sits in the forearm cavity. It fuses the visual data with the intent data and
+            runs predictive models of the grasp. Doing this on the device, rather than in the cloud, keeps latency low
+            and keeps camera images private to the limb.</p>
+
+          <h3>4. Actuation system</h3>
+          <p>High torque micro servos drive synthetic tendons that move each digit. Independent digits and a rotating
+            wrist let the hand form many grip shapes and adjust grip pressure smoothly rather than in fixed steps.</p>
+
+          <h3>5. Haptic feedback loop</h3>
+          <p>Small vibration motors at the attachment site let the user feel when an object is held securely. This
+            closes the loop back to the person, so the user keeps a sense of contact and confidence even though the
+            machine is doing the fine work.</p>
+        </section>
+
+        <!-- 04 Schematics -->
+        <section id="schematics" class="reveal">
+          <h2 data-no="04">Schematics and diagrams</h2>
+          <p>Three drawings describe the design. The first shows where every component sits on the arm. The second
+            shows how data moves through the system as a closed control loop. The third shows how the camera input
+            selects a grip from a library of grasp shapes.</p>
+
+          <!-- FIGURE 1 : component layout -->
+          <figure class="figure">
+            <div class="blueprint">
+              <div class="blueprint__title">Fig. 1 · Component layout, lateral view</div>
+              <div class="blueprint__frame">
+                <svg viewBox="0 0 900 430" role="img" aria-label="Lateral cutaway of the VisionGrip arm showing camera positions, EMG band, edge AI unit, battery, actuators, and haptic motors">
+                  <!-- center reference line -->
+                  <line x1="40" y1="250" x2="860" y2="250" class="bp-dim"/>
+                  <text x="44" y="244" class="bp-label-sm">CENTERLINE</text>
+
+                  <!-- socket / residual limb interface -->
+                  <path d="M70 210 q-22 40 0 80 l60 0 0 -80 z" class="bp-fill"/>
+                  <!-- EMG band ring -->
+                  <rect x="118" y="204" width="20" height="92" rx="6" class="bp-fill-2"/>
+                  <!-- haptic motors -->
+                  <circle cx="92" cy="226" r="6" class="bp-amber"/>
+                  <circle cx="92" cy="274" r="6" class="bp-amber"/>
+
+                  <!-- forearm shaft -->
+                  <rect x="138" y="212" width="320" height="76" rx="16" class="bp-stroke"/>
+                  <!-- edge AI board -->
+                  <rect x="168" y="226" width="96" height="30" rx="4" class="bp-fill-2"/>
+                  <line x1="176" y1="226" x2="176" y2="256" class="bp-stroke-soft"/>
+                  <line x1="188" y1="226" x2="188" y2="256" class="bp-stroke-soft"/>
+                  <!-- battery -->
+                  <rect x="284" y="260" width="120" height="22" rx="4" class="bp-fill"/>
+                  <line x1="404" y1="265" x2="410" y2="265" class="bp-stroke"/>
+                  <line x1="404" y1="277" x2="410" y2="277" class="bp-stroke"/>
+                  <!-- IMU -->
+                  <rect x="330" y="222" width="22" height="22" rx="3" class="bp-fill-2"/>
+                  <!-- tendon routing lines -->
+                  <path d="M264 244 H470" class="bp-dim"/>
+                  <path d="M264 250 H470" class="bp-dim"/>
+
+                  <!-- wrist joint -->
+                  <circle cx="492" cy="250" r="22" class="bp-fill-2"/>
+                  <path d="M492 230 a20 20 0 0 1 0 40" class="bp-amber"/>
+
+                  <!-- palm -->
+                  <rect x="520" y="208" width="86" height="84" rx="16" class="bp-fill"/>
+                  <!-- palm camera -->
+                  <circle cx="563" cy="250" r="7" class="bp-fill-2"/>
+                  <circle cx="563" cy="250" r="2.5" fill="#5fe0e6"/>
+
+                  <!-- fingers + fingertip cameras -->
+                  <g class="bp-stroke">
+                    <path d="M606 222 q60 -14 96 -34"/><circle cx="704" cy="186" r="7" class="bp-fill-2"/><circle cx="704" cy="186" r="2.5" fill="#5fe0e6"/>
+                    <path d="M606 236 q66 -6 108 -10"/><circle cx="716" cy="225" r="7" class="bp-fill-2"/><circle cx="716" cy="225" r="2.5" fill="#5fe0e6"/>
+                    <path d="M606 252 q66 2 108 8"/><circle cx="716" cy="262" r="7" class="bp-fill-2"/><circle cx="716" cy="262" r="2.5" fill="#5fe0e6"/>
+                    <path d="M606 268 q60 12 100 26"/><circle cx="708" cy="296" r="7" class="bp-fill-2"/><circle cx="708" cy="296" r="2.5" fill="#5fe0e6"/>
+                    <!-- thumb -->
+                    <path d="M524 286 q-6 30 -26 44"/><circle cx="496" cy="332" r="7" class="bp-fill-2"/><circle cx="496" cy="332" r="2.5" fill="#5fe0e6"/>
+                  </g>
+                  <!-- dorsal (back of hand) camera -->
+                  <circle cx="556" cy="214" r="7" class="bp-fill-2"/><circle cx="556" cy="214" r="2.5" fill="#5fe0e6"/>
+                  <!-- wrist camera -->
+                  <circle cx="510" cy="232" r="7" class="bp-fill-2"/><circle cx="510" cy="232" r="2.5" fill="#5fe0e6"/>
+
+                  <!-- ===== leader lines + labels ===== -->
+                  <!-- haptic -->
+                  <path d="M92 226 V120 H230" class="bp-stroke-soft"/>
+                  <text x="234" y="116" class="bp-amber-t">[1] Haptic feedback motors (LRA)</text>
+                  <!-- EMG -->
+                  <path d="M128 204 V150 H300" class="bp-stroke-soft"/>
+                  <text x="304" y="146" class="bp-label">[2] EMG / neural intent band</text>
+                  <!-- edge ai -->
+                  <path d="M216 226 V178 H360" class="bp-stroke-soft"/>
+                  <text x="364" y="174" class="bp-tag">[3] Edge AI processor + NPU</text>
+                  <!-- IMU -->
+                  <path d="M341 222 V196 H560" class="bp-stroke-soft"/>
+                  <text x="564" y="200" class="bp-label">[4] IMU (orientation)</text>
+                  <!-- battery -->
+                  <path d="M344 282 V330 H250" class="bp-stroke-soft"/>
+                  <text x="60" y="334" class="bp-label">[5] Battery pack (forearm cavity)</text>
+                  <!-- wrist actuator -->
+                  <path d="M492 272 V360 H360" class="bp-stroke-soft"/>
+                  <text x="120" y="364" class="bp-amber-t">[6] Wrist actuator (rotation)</text>
+                  <!-- cameras -->
+                  <path d="M704 186 V100 H560" class="bp-stroke-soft"/>
+                  <text x="560" y="96" class="bp-tag" text-anchor="end">[7] Fingertip + palm + dorsal cameras</text>
+                  <!-- tendons -->
+                  <path d="M520 250 H470 V395 H560" class="bp-dim"/>
+                  <text x="564" y="399" class="bp-label-sm">[8] Synthetic tendons + micro servos</text>
+                </svg>
+              </div>
+              <div class="blueprint__stamp">VISIONGRIP · DWG 001-A · NOT TO SCALE</div>
+            </div>
+            <figcaption><b>Figure 1.</b> Component layout. Cyan circles mark camera positions. The EMG band reads
+              intent at the socket, the edge AI unit and battery sit inside the forearm cavity, and tendon driven
+              servos move the digits. Haptic motors sit against the residual limb.</figcaption>
+          </figure>
+
+          <!-- FIGURE 2 : control loop -->
+          <figure class="figure">
+            <div class="blueprint">
+              <div class="blueprint__title">Fig. 2 · Signal flow and closed control loop</div>
+              <div class="blueprint__frame">
+                <svg viewBox="0 0 900 380" role="img" aria-label="Block diagram of VisionGrip data flow: cameras and EMG feed a fusion and grasp planner, which drives the motor controller and actuators, with force sensing and haptic feedback closing the loop">
+                  <!-- inputs -->
+                  <rect x="30" y="40" width="150" height="54" rx="8" class="bp-fill-2"/>
+                  <text x="105" y="64" class="bp-label" text-anchor="middle">Micro cameras</text>
+                  <text x="105" y="82" class="bp-label-sm" text-anchor="middle">fingertip · palm · wrist</text>
+
+                  <rect x="30" y="150" width="150" height="54" rx="8" class="bp-fill-2"/>
+                  <text x="105" y="174" class="bp-label" text-anchor="middle">EMG / neural band</text>
+                  <text x="105" y="192" class="bp-label-sm" text-anchor="middle">user intent</text>
+
+                  <rect x="30" y="260" width="150" height="54" rx="8" class="bp-fill"/>
+                  <text x="105" y="284" class="bp-label" text-anchor="middle">Force + touch</text>
+                  <text x="105" y="302" class="bp-label-sm" text-anchor="middle">fingertip sensors</text>
+
+                  <!-- stage 1 processing -->
+                  <rect x="240" y="40" width="160" height="54" rx="8" class="bp-fill"/>
+                  <text x="320" y="64" class="bp-label" text-anchor="middle">Vision pipeline</text>
+                  <text x="320" y="82" class="bp-label-sm" text-anchor="middle">detect · size · track</text>
+
+                  <rect x="240" y="150" width="160" height="54" rx="8" class="bp-fill"/>
+                  <text x="320" y="174" class="bp-label" text-anchor="middle">Intent decoder</text>
+                  <text x="320" y="192" class="bp-label-sm" text-anchor="middle">reach · grasp · release</text>
+
+                  <!-- fusion -->
+                  <rect x="470" y="92" width="170" height="120" rx="10" class="bp-fill-2"/>
+                  <text x="555" y="138" class="bp-tag" text-anchor="middle">Sensor fusion +</text>
+                  <text x="555" y="158" class="bp-tag" text-anchor="middle">grasp planner</text>
+                  <text x="555" y="182" class="bp-label-sm" text-anchor="middle">predictive kinematics</text>
+
+                  <!-- motor controller -->
+                  <rect x="700" y="92" width="160" height="54" rx="8" class="bp-fill"/>
+                  <text x="780" y="116" class="bp-label" text-anchor="middle">Motor controller</text>
+                  <text x="780" y="134" class="bp-label-sm" text-anchor="middle">torque + position</text>
+
+                  <!-- actuators -->
+                  <rect x="700" y="180" width="160" height="54" rx="8" class="bp-fill-2"/>
+                  <text x="780" y="204" class="bp-label" text-anchor="middle">Servos + tendons</text>
+                  <text x="780" y="222" class="bp-label-sm" text-anchor="middle">digits + wrist</text>
+
+                  <!-- haptic -->
+                  <rect x="470" y="260" width="170" height="54" rx="8" class="bp-amber" fill="rgba(255,205,107,.08)"/>
+                  <text x="555" y="284" class="bp-amber-t" text-anchor="middle">Haptic driver</text>
+                  <text x="555" y="302" class="bp-label-sm" text-anchor="middle">vibrotactile to user</text>
+
+                  <!-- arrows -->
+                  <defs>
+                    <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+                      <path d="M0 0 L7 3 L0 6 Z" fill="#add3ff"/>
+                    </marker>
+                    <marker id="ahc" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+                      <path d="M0 0 L7 3 L0 6 Z" fill="#5fe0e6"/>
+                    </marker>
+                    <marker id="aha" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+                      <path d="M0 0 L7 3 L0 6 Z" fill="#ffcd6b"/>
+                    </marker>
+                  </defs>
+                  <g class="bp-stroke-soft" marker-end="url(#ah)">
+                    <line x1="180" y1="67" x2="236" y2="67"/>
+                    <line x1="180" y1="177" x2="236" y2="177"/>
+                    <line x1="400" y1="67" x2="466" y2="120"/>
+                    <line x1="400" y1="177" x2="466" y2="160"/>
+                  </g>
+                  <g style="stroke:#5fe0e6; fill:none" marker-end="url(#ahc)">
+                    <line x1="640" y1="124" x2="696" y2="119"/>
+                  </g>
+                  <g class="bp-stroke-soft" marker-end="url(#ah)">
+                    <line x1="780" y1="146" x2="780" y2="176"/>
+                  </g>
+                  <!-- feedback: force back to fusion -->
+                  <path d="M180 287 H214 V152 H466" class="bp-dim" marker-end="url(#ah)"/>
+                  <!-- haptic from fusion to user -->
+                  <path d="M540 212 V256" style="stroke:#ffcd6b; fill:none" marker-end="url(#aha)"/>
+                  <!-- actuator state back to fusion (closed loop) -->
+                  <path d="M780 234 V340 H555 V316" class="bp-dim" marker-end="url(#ah)"/>
+                  <text x="300" y="356" class="bp-label-sm">dashed = feedback path (closed loop)</text>
+                </svg>
+              </div>
+              <div class="blueprint__stamp">VISIONGRIP · DWG 001-B</div>
+            </div>
+            <figcaption><b>Figure 2.</b> The control loop. Vision and intent are fused into a predictive grasp plan,
+              which drives the actuators. Fingertip force readings and actuator state feed back into the planner, and a
+              haptic signal returns to the user. The whole loop is designed to run on the edge processor in under a
+              fifth of a second so the hand is ready before contact.</figcaption>
+          </figure>
+
+          <!-- FIGURE 3 : grip library -->
+          <figure class="figure">
+            <div class="blueprint">
+              <div class="blueprint__title">Fig. 3 · Grip library and camera driven selection</div>
+              <div class="blueprint__frame">
+                <svg viewBox="0 0 900 250" role="img" aria-label="Five grip types selected from camera input: power, pinch, tripod, hook, and spherical">
+                  <!-- decision node -->
+                  <rect x="350" y="20" width="200" height="48" rx="10" class="bp-fill-2"/>
+                  <text x="450" y="42" class="bp-tag" text-anchor="middle">Object seen by camera</text>
+                  <text x="450" y="60" class="bp-label-sm" text-anchor="middle">shape · size · fragility</text>
+
+                  <g class="bp-stroke-soft">
+                    <path d="M390 68 V96 H110 V120"/>
+                    <path d="M415 68 V108 H300 V120"/>
+                    <path d="M450 68 V120"/>
+                    <path d="M485 68 V108 H600 V120"/>
+                    <path d="M510 68 V96 H790 V120"/>
+                  </g>
+
+                  <!-- power grip (cylinder) -->
+                  <g transform="translate(70,120)">
+                    <rect x="0" y="20" width="80" height="60" rx="10" class="bp-fill"/>
+                    <rect x="26" y="0" width="28" height="84" rx="14" class="bp-fill-2"/>
+                    <text x="40" y="104" class="bp-label" text-anchor="middle">Power</text>
+                  </g>
+                  <!-- pinch -->
+                  <g transform="translate(260,120)">
+                    <path d="M10 10 L40 40 M70 10 L40 40" class="bp-stroke"/>
+                    <circle cx="40" cy="46" r="8" class="bp-fill-2"/>
+                    <text x="40" y="104" class="bp-label" text-anchor="middle">Pinch</text>
+                  </g>
+                  <!-- tripod -->
+                  <g transform="translate(450,120)">
+                    <path d="M40 46 L12 8 M40 46 L40 4 M40 46 L68 8" class="bp-stroke"/>
+                    <circle cx="40" cy="50" r="9" class="bp-fill-2"/>
+                    <text x="40" y="104" class="bp-label" text-anchor="middle">Tripod</text>
+                  </g>
+                  <!-- hook -->
+                  <g transform="translate(560,120)">
+                    <path d="M20 6 v40 a20 20 0 0 0 40 0" class="bp-stroke"/>
+                    <rect x="12" y="48" width="56" height="12" rx="6" class="bp-fill"/>
+                    <text x="40" y="104" class="bp-label" text-anchor="middle">Hook</text>
+                  </g>
+                  <!-- spherical -->
+                  <g transform="translate(750,120)">
+                    <circle cx="40" cy="44" r="28" class="bp-fill-2"/>
+                    <path d="M12 44 a28 18 0 0 1 56 0" class="bp-stroke"/>
+                    <text x="40" y="104" class="bp-label" text-anchor="middle">Spherical</text>
+                  </g>
+                </svg>
+              </div>
+              <div class="blueprint__stamp">VISIONGRIP · DWG 001-C</div>
+            </div>
+            <figcaption><b>Figure 3.</b> The planner does not invent a grip from nothing. It chooses from a library of
+              known grasp shapes based on what the camera sees, then tunes finger spacing and pressure for the specific
+              object. A pencil triggers a tripod grip. A mug handle triggers a hook. A ball triggers a spherical grip.</figcaption>
+          </figure>
+        </section>
+
+        <!-- 05 Components -->
+        <section id="components" class="reveal">
+          <h2 data-no="05">Key components</h2>
+          <p>This is a working bill of materials at the concept stage. The values are design targets, not final
+            specifications, and they exist to make the engineering trade-offs concrete.</p>
+          <div class="table-wrap">
+            <table class="spec">
+              <thead>
+                <tr><th>Subsystem</th><th>Candidate part</th><th class="mono">Target spec</th><th>Purpose</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Fingertip cameras</td><td>Global shutter micro modules</td><td class="mono">120+ fps, low light</td><td>Close range object detail and motion tracking</td></tr>
+                <tr><td>Wrist camera</td><td>Wide field module</td><td class="mono">90&deg; FOV</td><td>Reach guidance and fast target tracking</td></tr>
+                <tr><td>Intent band</td><td>Dry electrode EMG array</td><td class="mono">8 channels</td><td>Coarse intent: reach, grasp, release</td></tr>
+                <tr><td>Processor</td><td>Edge AI SoC with NPU</td><td class="mono">10 to 40 TOPS</td><td>On-device fusion and grasp planning</td></tr>
+                <tr><td>Digit actuators</td><td>Brushless micro servos</td><td class="mono">series elastic</td><td>Independent finger articulation</td></tr>
+                <tr><td>Tendons</td><td>Synthetic high tensile cord</td><td class="mono">low stretch</td><td>Transmit force to the digits</td></tr>
+                <tr><td>Force sensing</td><td>Fingertip pressure cells</td><td class="mono">per-digit</td><td>Grip security and slip detection</td></tr>
+                <tr><td>Orientation</td><td>9-axis IMU</td><td class="mono">200 Hz</td><td>Track hand pose during reach</td></tr>
+                <tr><td>Haptics</td><td>Linear resonant actuators</td><td class="mono">vibrotactile</td><td>Confirm secure hold to the user</td></tr>
+                <tr><td>Power</td><td>Li-ion pack in forearm</td><td class="mono">full day target</td><td>Run sensing, compute, and actuation</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- 06 Control modes -->
+        <section id="modes" class="reveal">
+          <h2 data-no="06">Control modes</h2>
+          <p>Autonomy is adjustable. The user is never locked out. Three modes trade speed for control, and the user
+            can move between them.</p>
+          <div class="grid grid-3">
+            <div class="card"><h3>Manual</h3><p class="muted">The hand responds only to direct intent signals. Useful for training, for unusual tasks, and for users who want full control.</p></div>
+            <div class="card"><h3>Assisted</h3><p class="muted">The default. The user aims and commits, and the hand shapes the grip and sets pressure. The user can override at any point.</p></div>
+            <div class="card"><h3>Autonomous reach</h3><p class="muted">For fast or repetitive tasks. Once the user commits to a target, the hand tracks it and completes the grasp on its own.</p></div>
+          </div>
+          <div class="callout">
+            <strong>Control authority</strong>
+            <p>A hard rule sits under all three modes. A sustained intent signal from the user always overrides the
+              planner. The machine handles geometry, but the person keeps the final say.</p>
+          </div>
+        </section>
+
+        <!-- 07 Applications -->
+        <section id="applications" class="reveal">
+          <h2 data-no="07">Potential applications</h2>
+          <div class="grid grid-2">
+            <div>
+              <ul class="flist">
+                <li><strong>Daily living.</strong> Cooking, dressing, and handling fragile or oddly shaped items with far less conscious effort.</li>
+                <li><strong>Sport and recreation.</strong> Catching, throwing, and gripping equipment where timing is too fast for manual grip selection.</li>
+                <li><strong>Skilled and occupational work.</strong> Tool handling and assembly tasks that need consistent, repeatable grips.</li>
+              </ul>
+            </div>
+            <div>
+              <ul class="flist">
+                <li><strong>Pediatric use.</strong> A scaled version that lowers the learning curve for children, who often struggle with effortful myoelectric control.</li>
+                <li><strong>Rehabilitation data.</strong> The sensor stream is a rich record of how a user moves, which can guide therapy.</li>
+                <li><strong>Platform for other limbs.</strong> The same vision and fusion stack extends to prosthetic feet, exoskeletons, and assistive robots.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- 08 Feasibility -->
+        <section id="feasibility" class="reveal">
+          <h2 data-no="08">Technical feasibility analysis</h2>
+          <p>The honest read is that the building blocks exist, but packing them into a hand sized, all day device is
+            the real challenge. Camera guided prosthetic hands and shared control have both been shown in research
+            settings, which means the concept is not speculative. The hard work is integration, power, and trust.</p>
+          <div class="table-wrap">
+            <table class="spec">
+              <thead><tr><th>Element</th><th>Verdict</th><th>Notes</th></tr></thead>
+              <tbody>
+                <tr><td>Camera based grip selection</td><td><span class="verdict ok">Proven in research</span></td><td>Camera-augmented hands that pick a grip with deep learning have been demonstrated by university groups.</td></tr>
+                <tr><td>Coarse EMG intent</td><td><span class="verdict ok">Mature</span></td><td>Reading reach, grasp, and release from surface muscles is well established and reliable.</td></tr>
+                <tr><td>Sub-200ms closed loop on edge</td><td><span class="verdict mid">Achievable, tight</span></td><td>Needs a careful latency budget across capture, inference, planning, and actuation.</td></tr>
+                <tr><td>Power, weight, and heat in a hand package</td><td><span class="verdict hard">Hardest part</span></td><td>Compute and actuation are both power hungry. Thermal and mass limits drive the whole design.</td></tr>
+                <tr><td>Durability and water resistance</td><td><span class="verdict mid">Solvable</span></td><td>Sealing cameras and servos for daily life is an engineering task, not a research one.</td></tr>
+                <tr><td>Consumer cost</td><td><span class="verdict hard">Long term</span></td><td>Advanced prosthetics are expensive. Cost reduction is a program in its own right.</td></tr>
+                <tr><td>Regulatory pathway</td><td><span class="verdict mid">Defined but long</span></td><td>This is a medical device. It needs clinical validation and likely regulatory clearance.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="callout callout--warn">
+            <strong>Latency budget</strong>
+            <p>For the hand to be ready before contact, the loop from camera frame to finger motion has to stay short.
+              A rough target: capture and pre-process under 20 ms, inference under 60 ms, grasp planning under 40 ms,
+              and actuation start under 60 ms. That keeps the system well under a fifth of a second, which is faster
+              than a typical reach.</p>
+          </div>
+        </section>
+
+        <!-- 09 Variations -->
+        <section id="variations" class="reveal">
+          <h2 data-no="09">Improvements and variations</h2>
+          <ul class="flist">
+            <li><strong>Richer intent.</strong> Pair the surface band with implanted muscle sensors or targeted muscle reinnervation for finer, more natural intent signals.</li>
+            <li><strong>Real sensory return.</strong> Replace simple vibration with targeted nerve stimulation, so the user feels texture and force closer to natural touch.</li>
+            <li><strong>Bone anchored mounting.</strong> An osseointegrated mount improves comfort, load transfer, and signal stability over a socket.</li>
+            <li><strong>Modular hands.</strong> Quick swap end effectors, including tool specific ends, on the same intelligent forearm.</li>
+            <li><strong>Shared grasp library.</strong> Grips learned across users improve the library over time, with all camera data processed on device to protect privacy.</li>
+            <li><strong>Gaze assist.</strong> Optional AR glasses let the system know where the user is looking, which sharpens target selection in cluttered scenes.</li>
+          </ul>
+        </section>
+
+        <!-- 10 Roadmap -->
+        <section id="roadmap" class="reveal">
+          <h2 data-no="10">Prototyping roadmap</h2>
+          <p>A staged path keeps each step testable. Early phases use off the shelf parts to prove the idea before
+            committing to custom hardware.</p>
+          <div class="timeline">
+            <div class="phase"><span class="when">PHASE 0 · BENCH</span><h4>Prove grip selection</h4><p class="muted">An off the shelf robotic hand, a webcam, and a single board AI computer. Goal: show the system picks the right grip from camera input on a set of common objects.</p></div>
+            <div class="phase"><span class="when">PHASE 1 · INTEGRATE</span><h4>3D printed forearm</h4><p class="muted">Bring cameras, compute, and actuation into one printed forearm with a single grip. Validate the latency budget end to end.</p></div>
+            <div class="phase"><span class="when">PHASE 2 · ARTICULATE</span><h4>Full hand and fusion</h4><p class="muted">Independent digits, EMG fusion, force sensing, and haptic feedback. Measure grip success on fragile and moving objects.</p></div>
+            <div class="phase"><span class="when">PHASE 3 · WEAR</span><h4>User trials</h4><p class="muted">Fit testing with amputee volunteers under ethics review. Focus on comfort, trust, durability, and daily living tasks.</p></div>
+            <div class="phase"><span class="when">PHASE 4 · HARDEN</span><h4>Design for manufacture</h4><p class="muted">Cost reduction, sealing, reliability, and the start of the regulatory pathway.</p></div>
+          </div>
+        </section>
+
+        <!-- 11 Ethics -->
+        <section id="ethics" class="reveal">
+          <h2 data-no="11">Safety and ethics</h2>
+          <ul class="flist">
+            <li><strong>The user stays in command.</strong> Autonomy assists, it does not take over. A clear override is always present, and failure should default to a safe, open hand rather than a clenched one.</li>
+            <li><strong>Always on cameras raise privacy questions.</strong> The arm carries cameras that face the world. All image processing happens on the device, images are not stored or sent off by default, and the user controls any data sharing.</li>
+            <li><strong>Medical device duty of care.</strong> Anything that attaches to a person and moves under power needs rigorous safety testing, clear failure behavior, and clinical validation before real use.</li>
+            <li><strong>Access and cost.</strong> A device that only the wealthy can afford does not solve the problem at scale. Cost has to be a design goal, not an afterthought.</li>
+          </ul>
+        </section>
+
+        <!-- 12 Risks -->
+        <section id="risks" class="reveal">
+          <h2 data-no="12">Risks and open questions</h2>
+          <div class="grid grid-2">
+            <div class="card"><h3>Trust calibration</h3><p class="muted">How much autonomy feels helpful rather than unsettling? The right balance likely differs per user and per task, so it has to be adjustable and learnable.</p></div>
+            <div class="card"><h3>Intent and action mismatch</h3><p class="muted">If the hand acts on a predicted grasp and the user changes their mind mid reach, the system must cancel cleanly and fast.</p></div>
+            <div class="card"><h3>Vision in the real world</h3><p class="muted">Low light, glare, clutter, and occlusion all degrade camera input. The fallback to manual control has to be seamless.</p></div>
+            <div class="card"><h3>Energy reality</h3><p class="muted">Running cameras, an NPU, and motors all day is demanding. Battery life may force trade-offs in how often the system runs at full capability.</p></div>
+          </div>
+        </section>
+
+        <!-- nav between inventions -->
+        <hr />
+        <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px">
+          <a class="btn btn--ghost" href="../index.html#inventions">&larr; Back to catalog</a>
+          <a class="btn btn--primary" href="productivityflows.html">Next: 002 · ProductivityFlows &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a class="brand" href="../index.html"><span class="brand__mark">JR</span><span style="color:#fff">Jay Reddy</span></a>
+          <p>An inventor portfolio documenting concepts at the intersection of artificial intelligence and the physical world.</p>
+        </div>
+        <div class="footer__cols">
+          <div class="footer__col">
+            <h5>Inventions</h5>
+            <a href="visiongrip.html">001 · VisionGrip</a>
+            <a href="productivityflows.html">002 · ProductivityFlows</a>
+            <a href="../index.html#inventions">Full catalog</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; <span data-year>2026</span> Jay Reddy.</span>
+        <span>VisionGrip · Invention 001</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

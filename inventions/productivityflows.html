@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProductivityFlows · Invention 002 · Jay Reddy</title>
+  <meta name="description" content="ProductivityFlows is a computer vision platform that turns job site video into objective safety and productivity signals, with a tamper evident liability record and a privacy first design. Full design, schematics, feasibility, and ethics." />
+  <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'&gt;&lt;rect width='32' height='32' rx='8' fill='%231f6feb'/&gt;&lt;text x='16' y='22' font-family='monospace' font-size='16' fill='white' text-anchor='middle'&gt;JR&lt;/text&gt;&lt;/svg&gt;" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;550;600;700;750;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav">
+    <div class="wrap nav__inner">
+      <a class="brand" href="../index.html"><span class="brand__mark">JR</span><span>Jay Reddy</span></a>
+      <button class="nav__toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <nav class="nav__links">
+        <a href="../index.html#inventions">All inventions</a>
+        <a href="../index.html#about">Inventor</a>
+        <a href="visiongrip.html">001 · VisionGrip</a>
+        <a href="productivityflows.html">002 · ProductivityFlows</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== HEADER ===================== -->
+  <section class="inv-header">
+    <div class="inv-header__grid" aria-hidden="true"></div>
+    <div class="wrap inv-header__inner">
+      <div class="breadcrumb"><a href="../index.html">Catalog</a> / Invention 002</div>
+      <h1>ProductivityFlows <span class="codename">// enterprise intelligence system</span></h1>
+      <p class="hero__sub" style="margin-top:.6rem">A computer vision platform that turns physical work into objective, consented safety and productivity signals.</p>
+      <div class="inv-meta">
+        <div><div class="k">Date conceived</div><div class="v">January 2025</div></div>
+        <div><div class="k">Status</div><div class="v">In research · early build</div></div>
+        <div><div class="k">Domain</div><div class="v">Computer vision · SaaS</div></div>
+        <div><div class="k">Inventor</div><div class="v">Jay Reddy</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DOC ===================== -->
+  <div class="section">
+    <div class="wrap doc">
+
+      <!-- TOC -->
+      <aside class="toc">
+        <h4>On this page</h4>
+        <ol>
+          <li><a href="#overview">01 · Overview</a></li>
+          <li><a href="#problem">02 · The problem</a></li>
+          <li><a href="#description">03 · Detailed description</a></li>
+          <li><a href="#schematics">04 · Architecture and schematics</a></li>
+          <li><a href="#analytics">05 · How the analytics work</a></li>
+          <li><a href="#components">06 · Key components</a></li>
+          <li><a href="#applications">07 · Potential applications</a></li>
+          <li><a href="#feasibility">08 · Technical feasibility</a></li>
+          <li><a href="#ethics">09 · Privacy, ethics, and law</a></li>
+          <li><a href="#variations">10 · Improvements and variations</a></li>
+          <li><a href="#roadmap">11 · Prototyping roadmap</a></li>
+          <li><a href="#risks">12 · Risks and open questions</a></li>
+        </ol>
+      </aside>
+
+      <!-- BODY -->
+      <div class="doc__body">
+
+        <!-- 01 Overview -->
+        <section id="overview" class="reveal">
+          <h2 data-no="01">Overview</h2>
+          <p class="lead">ProductivityFlows is a workforce intelligence and liability platform that reads physical
+            labor in real time using computer vision.</p>
+          <p>It pulls video from employee worn smart glasses and fixed job site cameras, then uses computer vision to
+            measure task completion, work pacing, and safety compliance across fields like construction, warehousing,
+            and field service. The aim is to replace subjective performance reviews with objective signals, to flag
+            unsafe conditions before they cause harm, and to keep a tamper evident record of incidents for insurance
+            and quality disputes.</p>
+          <div class="callout callout--note">
+            <strong>The framing that matters</strong>
+            <p>A system that watches workers can easily become surveillance that workers resent and that the law
+              restricts. This design treats consent, privacy, and worker benefit as core engineering requirements, not
+              add-ons. The most defensible version of this product helps people work safely and get paid fairly, and it
+              is built to prove that.</p>
+          </div>
+        </section>
+
+        <!-- 02 Problem -->
+        <section id="problem" class="reveal">
+          <h2 data-no="02">The problem being solved</h2>
+          <p>Physical work is hard to measure well, and the gaps cause real cost.</p>
+          <ul class="flist">
+            <li><strong>Performance reviews are subjective.</strong> In manual trades, output is judged by memory and impression, which is unfair to strong workers and easy to game.</li>
+            <li><strong>Safety compliance is checked by spot audits.</strong> A missing hard hat or an unsafe lift is usually caught after the fact, if at all.</li>
+            <li><strong>Liability disputes lack evidence.</strong> When an accident or a quality failure happens, there is often no clear record of what actually occurred.</li>
+            <li><strong>Good work goes unrewarded.</strong> Without objective output data, bonuses and recognition rarely reach the people who earn them.</li>
+          </ul>
+          <p>ProductivityFlows addresses these by producing objective, time stamped signals from work that is already
+            happening in plain view, while keeping the people in that video protected.</p>
+        </section>
+
+        <!-- 03 Description -->
+        <section id="description" class="reveal">
+          <h2 data-no="03">Detailed description</h2>
+          <p>The platform has five parts. Data comes in, gets understood, gets scored, drives rewards, and gets
+            archived for liability. A privacy filter sits at the front of the pipeline so that raw faces and off-task
+            footage never have to leave the site.</p>
+
+          <h3>1. Data ingestion hardware</h3>
+          <p>Lightweight, shatter resistant employee glasses with a physical privacy shutter for breaks and off the
+            clock time, plus standard job site IP cameras. The glasses give a first person view of tool use. The fixed
+            cameras give site wide context.</p>
+
+          <h3>2. Computer vision engine</h3>
+          <p>An on-site or cloud server that uses pose estimation and object recognition to track hand movements, tool
+            usage, movement pacing, and protective equipment. This is where pixels become structured events.</p>
+
+          <h3>3. Analytics and dashboard</h3>
+          <p>The management suite turns events into metrics. It scores active work time against idle time, surfaces
+            bottlenecks, and flags safety protocol violations such as a missing hard hat or entry into a restricted
+            zone.</p>
+
+          <h3>4. Automated reward protocol</h3>
+          <p>An API links an output score to payroll, so that exceeding agreed productivity or safety benchmarks can
+            trigger micro bonuses or reward points automatically and transparently.</p>
+
+          <h3>5. Liability vault</h3>
+          <p>A secure, time stamped archive that automatically tags and saves footage of sudden impacts, falls, or
+            structural failures. Records are write once and tamper evident so they hold up for insurance and quality
+            review.</p>
+        </section>
+
+        <!-- 04 Architecture + schematics -->
+        <section id="schematics" class="reveal">
+          <h2 data-no="04">Architecture and schematics</h2>
+          <p>Two drawings and one interface mockup describe the system. The first shows the full data path from camera
+            to outputs. The second shows the vision pipeline that converts a frame into events. The third shows what a
+            manager actually sees.</p>
+
+          <!-- FIGURE 1: architecture -->
+          <figure class="figure">
+            <div class="blueprint">
+              <div class="blueprint__title">Fig. 1 · System architecture and data flow</div>
+              <div class="blueprint__frame">
+                <svg viewBox="0 0 900 420" role="img" aria-label="ProductivityFlows architecture: smart glasses and IP cameras feed an on-site privacy gateway, then a computer vision engine, then an analytics core that drives a dashboard, a reward API to payroll, and a tamper evident liability vault">
+                  <defs>
+                    <marker id="pf" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0 0 L7 3 L0 6 Z" fill="#add3ff"/></marker>
+                    <marker id="pfc" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0 0 L7 3 L0 6 Z" fill="#5fe0e6"/></marker>
+                  </defs>
+
+                  <!-- column labels -->
+                  <text x="95" y="28" class="bp-label-sm" text-anchor="middle">CAPTURE</text>
+                  <text x="300" y="28" class="bp-label-sm" text-anchor="middle">ON-SITE PRIVACY EDGE</text>
+                  <text x="520" y="28" class="bp-label-sm" text-anchor="middle">UNDERSTANDING</text>
+                  <text x="780" y="28" class="bp-label-sm" text-anchor="middle">OUTPUTS</text>
+
+                  <!-- sources -->
+                  <rect x="30" y="80" width="130" height="50" rx="8" class="bp-fill-2"/>
+                  <text x="95" y="102" class="bp-label" text-anchor="middle">Smart glasses</text>
+                  <text x="95" y="119" class="bp-label-sm" text-anchor="middle">first person view</text>
+
+                  <rect x="30" y="160" width="130" height="50" rx="8" class="bp-fill-2"/>
+                  <text x="95" y="182" class="bp-label" text-anchor="middle">IP cameras</text>
+                  <text x="95" y="199" class="bp-label-sm" text-anchor="middle">site context</text>
+
+                  <!-- privacy gateway -->
+                  <rect x="230" y="110" width="150" height="90" rx="10" class="bp-amber" fill="rgba(255,205,107,.08)"/>
+                  <text x="305" y="142" class="bp-amber-t" text-anchor="middle">Privacy gateway</text>
+                  <text x="305" y="162" class="bp-label-sm" text-anchor="middle">blur faces · drop</text>
+                  <text x="305" y="178" class="bp-label-sm" text-anchor="middle">off-task footage</text>
+
+                  <!-- CV engine -->
+                  <rect x="450" y="80" width="170" height="150" rx="10" class="bp-fill-2"/>
+                  <text x="535" y="110" class="bp-tag" text-anchor="middle">CV engine</text>
+                  <line x1="466" y1="124" x2="604" y2="124" class="bp-stroke-soft"/>
+                  <text x="535" y="146" class="bp-label-sm" text-anchor="middle">pose estimation</text>
+                  <text x="535" y="166" class="bp-label-sm" text-anchor="middle">action recognition</text>
+                  <text x="535" y="186" class="bp-label-sm" text-anchor="middle">PPE + object detect</text>
+                  <text x="535" y="206" class="bp-label-sm" text-anchor="middle">zone monitoring</text>
+
+                  <!-- analytics core -->
+                  <rect x="450" y="270" width="170" height="64" rx="10" class="bp-fill"/>
+                  <text x="535" y="298" class="bp-label" text-anchor="middle">Analytics core</text>
+                  <text x="535" y="316" class="bp-label-sm" text-anchor="middle">scoring · events · trends</text>
+
+                  <!-- outputs -->
+                  <rect x="700" y="70" width="170" height="48" rx="8" class="bp-fill"/>
+                  <text x="785" y="98" class="bp-label" text-anchor="middle">Manager dashboard</text>
+
+                  <rect x="700" y="135" width="170" height="48" rx="8" class="bp-fill"/>
+                  <text x="785" y="156" class="bp-label" text-anchor="middle">Reward API</text>
+                  <text x="785" y="172" class="bp-label-sm" text-anchor="middle">to payroll</text>
+
+                  <rect x="700" y="200" width="170" height="56" rx="8" class="bp-amber" fill="rgba(255,205,107,.08)"/>
+                  <text x="785" y="224" class="bp-amber-t" text-anchor="middle">Liability vault</text>
+                  <text x="785" y="241" class="bp-label-sm" text-anchor="middle">write once · tamper evident</text>
+
+                  <!-- arrows -->
+                  <g class="bp-stroke-soft" marker-end="url(#pf)">
+                    <line x1="160" y1="105" x2="226" y2="135"/>
+                    <line x1="160" y1="185" x2="226" y2="170"/>
+                    <line x1="380" y1="150" x2="446" y2="150"/>
+                    <line x1="620" y1="150" x2="700" y2="100"/>
+                    <line x1="620" y1="300" x2="700" y2="160"/>
+                    <line x1="535" y1="230" x2="535" y2="266"/>
+                  </g>
+                  <g style="stroke:#5fe0e6;fill:none" marker-end="url(#pfc)">
+                    <line x1="620" y1="170" x2="700" y2="220"/>
+                  </g>
+                  <text x="300" y="360" class="bp-label-sm">Raw video stays on the privacy edge. Only structured events and tagged incident clips move downstream.</text>
+                </svg>
+              </div>
+              <div class="blueprint__stamp">PRODUCTIVITYFLOWS · DWG 002-A</div>
+            </div>
+            <figcaption><b>Figure 1.</b> The data path. The privacy gateway sits between the cameras and everything
+              else. It blurs identities and discards off-task footage before any of it reaches the analytics layer, so
+              the rest of the system works on structured events rather than raw faces.</figcaption>
+          </figure>
+
+          <!-- FIGURE 2: vision pipeline -->
+          <figure class="figure">
+            <div class="blueprint">
+              <div class="blueprint__title">Fig. 2 · Vision pipeline, frame to event</div>
+              <div class="blueprint__frame">
+                <svg viewBox="0 0 900 200" role="img" aria-label="Vision pipeline stages: frame, person and object detection, pose estimation, action and PPE classification, event with timestamp">
+                  <defs>
+                    <marker id="pf2" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0 0 L7 3 L0 6 Z" fill="#add3ff"/></marker>
+                  </defs>
+                  <g>
+                    <rect x="20" y="70" width="130" height="60" rx="8" class="bp-fill"/>
+                    <text x="85" y="96" class="bp-label" text-anchor="middle">Frame in</text>
+                    <text x="85" y="113" class="bp-label-sm" text-anchor="middle">30 fps stream</text>
+
+                    <rect x="190" y="70" width="140" height="60" rx="8" class="bp-fill"/>
+                    <text x="260" y="96" class="bp-label" text-anchor="middle">Detect</text>
+                    <text x="260" y="113" class="bp-label-sm" text-anchor="middle">people · tools · PPE</text>
+
+                    <rect x="370" y="70" width="140" height="60" rx="8" class="bp-fill"/>
+                    <text x="440" y="96" class="bp-label" text-anchor="middle">Pose + track</text>
+                    <text x="440" y="113" class="bp-label-sm" text-anchor="middle">skeleton over time</text>
+
+                    <rect x="550" y="70" width="150" height="60" rx="8" class="bp-fill-2"/>
+                    <text x="625" y="96" class="bp-label" text-anchor="middle">Classify action</text>
+                    <text x="625" y="113" class="bp-label-sm" text-anchor="middle">lifting · idle · unsafe</text>
+
+                    <rect x="740" y="70" width="140" height="60" rx="8" class="bp-fill-2"/>
+                    <text x="810" y="96" class="bp-tag" text-anchor="middle">Event out</text>
+                    <text x="810" y="113" class="bp-label-sm" text-anchor="middle">tagged + stamped</text>
+                  </g>
+                  <g class="bp-stroke-soft" marker-end="url(#pf2)">
+                    <line x1="150" y1="100" x2="186" y2="100"/>
+                    <line x1="330" y1="100" x2="366" y2="100"/>
+                    <line x1="510" y1="100" x2="546" y2="100"/>
+                    <line x1="700" y1="100" x2="736" y2="100"/>
+                  </g>
+                  <text x="20" y="165" class="bp-label-sm">Each stage outputs structured data, not stored video. A frame becomes a row like: worker A · lifting · correct PPE · 11:42:07.</text>
+                </svg>
+              </div>
+              <div class="blueprint__stamp">PRODUCTIVITYFLOWS · DWG 002-B</div>
+            </div>
+            <figcaption><b>Figure 2.</b> How a frame becomes an event. The pipeline converts pixels into a compact,
+              structured record. That record, not the video, is what gets scored and stored.</figcaption>
+          </figure>
+
+          <!-- FIGURE 3: dashboard mockup -->
+          <figure class="figure">
+            <div class="mock">
+              <div class="mock__bar"><i></i><i></i><i></i><span>productivityflows.app / dashboard</span></div>
+              <div style="padding:20px; background:#fafbfe">
+                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:16px">
+                  <div style="font-weight:700; font-size:1.05rem">Site overview · North Yard</div>
+                  <div style="font-family:var(--font-mono); font-size:.78rem; color:var(--ink-faint)">Shift 07:00 - 15:00 · live</div>
+                </div>
+                <!-- metric cards -->
+                <div class="grid grid-4" style="gap:14px; margin-bottom:16px">
+                  <div class="card" style="padding:16px"><div style="font-family:var(--font-mono); font-size:.72rem; color:var(--ink-faint)">ACTIVE TIME</div><div style="font-size:1.6rem; font-weight:750; color:var(--green)">82%</div></div>
+                  <div class="card" style="padding:16px"><div style="font-family:var(--font-mono); font-size:.72rem; color:var(--ink-faint)">TASKS DONE</div><div style="font-size:1.6rem; font-weight:750">147</div></div>
+                  <div class="card" style="padding:16px"><div style="font-family:var(--font-mono); font-size:.72rem; color:var(--ink-faint)">SAFETY FLAGS</div><div style="font-size:1.6rem; font-weight:750; color:var(--amber)">3</div></div>
+                  <div class="card" style="padding:16px"><div style="font-family:var(--font-mono); font-size:.72rem; color:var(--ink-faint)">BONUSES DUE</div><div style="font-size:1.6rem; font-weight:750; color:var(--accent)">$240</div></div>
+                </div>
+                <div class="grid grid-2" style="gap:14px">
+                  <!-- bar chart -->
+                  <div class="card" style="padding:18px">
+                    <div style="font-weight:650; margin-bottom:12px">Active vs idle by crew</div>
+                    <svg viewBox="0 0 320 150" style="width:100%">
+                      <g font-family="JetBrains Mono, monospace" font-size="10" fill="#6b7790">
+                        <text x="0" y="28">A</text><text x="0" y="58">B</text><text x="0" y="88">C</text><text x="0" y="118">D</text>
+                      </g>
+                      <g>
+                        <rect x="24" y="16" width="230" height="16" rx="3" fill="#1f9d6b"/><rect x="254" y="16" width="44" height="16" rx="3" fill="#eaeef7"/>
+                        <rect x="24" y="46" width="180" height="16" rx="3" fill="#1f9d6b"/><rect x="204" y="46" width="94" height="16" rx="3" fill="#eaeef7"/>
+                        <rect x="24" y="76" width="210" height="16" rx="3" fill="#1f9d6b"/><rect x="234" y="76" width="64" height="16" rx="3" fill="#eaeef7"/>
+                        <rect x="24" y="106" width="150" height="16" rx="3" fill="#e8a13a"/><rect x="174" y="106" width="124" height="16" rx="3" fill="#eaeef7"/>
+                      </g>
+                      <text x="24" y="142" font-family="JetBrains Mono, monospace" font-size="9" fill="#1f9d6b">active</text>
+                      <text x="120" y="142" font-family="JetBrains Mono, monospace" font-size="9" fill="#6b7790">idle</text>
+                    </svg>
+                  </div>
+                  <!-- safety + leaderboard -->
+                  <div class="card" style="padding:18px">
+                    <div style="font-weight:650; margin-bottom:12px">Live safety flags</div>
+                    <div style="font-size:.86rem; line-height:1.5">
+                      <div style="display:flex; justify-content:space-between; padding:7px 0; border-bottom:1px solid var(--line)"><span>Missing hard hat · Zone 4</span><span class="tag tag--research" style="background:#fff3e0;color:#b9791b">11:18</span></div>
+                      <div style="display:flex; justify-content:space-between; padding:7px 0; border-bottom:1px solid var(--line)"><span>Restricted zone entry · Bay 2</span><span class="tag tag--research" style="background:#fff3e0;color:#b9791b">10:54</span></div>
+                      <div style="display:flex; justify-content:space-between; padding:7px 0"><span>Improper lift posture · Dock</span><span class="tag tag--research" style="background:#fff3e0;color:#b9791b">10:31</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <figcaption><b>Figure 3.</b> Manager view mockup. Note that the interface shows aggregated metrics and
+              safety events, not raw faces or live video of individuals. Sample data is illustrative.</figcaption>
+          </figure>
+        </section>
+
+        <!-- 05 Analytics -->
+        <section id="analytics" class="reveal">
+          <h2 data-no="05">How the analytics work</h2>
+          <p>The scoring has to be explainable, or managers will not trust it and workers will not accept it. Each
+            score traces back to specific events with timestamps, so any number can be questioned and checked.</p>
+          <div class="table-wrap">
+            <table class="spec">
+              <thead><tr><th>Signal</th><th>What the vision engine measures</th><th class="mono">Used for</th></tr></thead>
+              <tbody>
+                <tr><td>Active time</td><td>Time spent in task-related motion versus idle</td><td class="mono">output score</td></tr>
+                <tr><td>Task completion</td><td>Recognized start and end of defined work units</td><td class="mono">throughput</td></tr>
+                <tr><td>Pacing</td><td>Rate of repeated actions over a window</td><td class="mono">fatigue, bottlenecks</td></tr>
+                <tr><td>PPE compliance</td><td>Presence of hard hat, vest, gloves, harness</td><td class="mono">safety score</td></tr>
+                <tr><td>Zone adherence</td><td>Entry into restricted or unsafe areas</td><td class="mono">safety alerts</td></tr>
+                <tr><td>Lift and posture</td><td>Body pose during heavy or repeated lifts</td><td class="mono">injury prevention</td></tr>
+                <tr><td>Incident triggers</td><td>Sudden impacts, falls, structural movement</td><td class="mono">liability vault</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="callout">
+            <strong>Design principle</strong>
+            <p>Safety signals should be weighted to protect people, not just to rank them. A version of this product
+              that flags an unsafe lift and prevents a back injury is more valuable, and more defensible, than one that
+              only counts idle minutes.</p>
+          </div>
+        </section>
+
+        <!-- 06 Components -->
+        <section id="components" class="reveal">
+          <h2 data-no="06">Key components</h2>
+          <div class="table-wrap">
+            <table class="spec">
+              <thead><tr><th>Layer</th><th>Candidate technology</th><th>Purpose</th></tr></thead>
+              <tbody>
+                <tr><td>Glasses</td><td>Shatter resistant frames, camera, physical shutter</td><td>First person capture with a hardware off switch</td></tr>
+                <tr><td>Fixed cameras</td><td>Standard IP cameras over local network</td><td>Site wide context and zone coverage</td></tr>
+                <tr><td>Edge gateway</td><td>On-site server with a small accelerator</td><td>Run the privacy filter and first pass vision locally</td></tr>
+                <tr><td>Vision models</td><td>Pose estimation, object detection, action recognition</td><td>Convert frames to structured events</td></tr>
+                <tr><td>Event store</td><td>Time series database</td><td>Hold structured events, not raw video</td></tr>
+                <tr><td>Dashboard</td><td>Web application</td><td>Aggregated metrics and safety alerts for managers</td></tr>
+                <tr><td>Reward API</td><td>Integration with payroll and reward systems</td><td>Tie verified output to transparent pay</td></tr>
+                <tr><td>Liability vault</td><td>Write once storage with cryptographic hashing</td><td>Tamper evident incident records</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- 07 Applications -->
+        <section id="applications" class="reveal">
+          <h2 data-no="07">Potential applications</h2>
+          <div class="grid grid-2">
+            <div>
+              <ul class="flist">
+                <li><strong>Construction safety.</strong> Real time PPE checks and unsafe-zone alerts on active sites.</li>
+                <li><strong>Warehouse ergonomics.</strong> Spot risky lifting patterns before they become injuries.</li>
+                <li><strong>Quality control.</strong> Confirm that assembly or service steps were actually completed.</li>
+              </ul>
+            </div>
+            <div>
+              <ul class="flist">
+                <li><strong>Training.</strong> Compare a trainee's motion to a skilled baseline and give specific feedback.</li>
+                <li><strong>Insurance.</strong> A clear incident record can lower disputes and support fair claims.</li>
+                <li><strong>Fair pay.</strong> Tie bonuses to verified output so strong workers are recognized objectively.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- 08 Feasibility -->
+        <section id="feasibility" class="reveal">
+          <h2 data-no="08">Technical feasibility analysis</h2>
+          <p>The vision technology is largely available. The hard parts are accuracy in messy environments, the cost
+            and bandwidth of running it at scale, and the legal and human acceptance that decide whether it can be
+            deployed at all.</p>
+          <div class="table-wrap">
+            <table class="spec">
+              <thead><tr><th>Element</th><th>Verdict</th><th>Notes</th></tr></thead>
+              <tbody>
+                <tr><td>PPE and object detection</td><td><span class="verdict ok">Mature</span></td><td>Detecting hard hats, vests, and tools is well within current computer vision.</td></tr>
+                <tr><td>Pose estimation</td><td><span class="verdict ok">Mature</span></td><td>Skeleton tracking from video is reliable in reasonable conditions.</td></tr>
+                <tr><td>Fine action recognition</td><td><span class="verdict mid">Workable, noisy</span></td><td>Telling productive work from similar looking idle motion is harder and needs tuning per site.</td></tr>
+                <tr><td>Edge versus cloud cost</td><td><span class="verdict mid">A real trade-off</span></td><td>On-site processing protects privacy but adds hardware cost. Cloud is cheaper to start but raises data risk.</td></tr>
+                <tr><td>Bandwidth and storage</td><td><span class="verdict mid">Manageable by design</span></td><td>Storing events instead of video keeps storage small. Live video would not scale.</td></tr>
+                <tr><td>Worker acceptance</td><td><span class="verdict hard">The real barrier</span></td><td>Without trust and consent, the system gets resisted, gamed, or banned regardless of accuracy.</td></tr>
+                <tr><td>Legal compliance</td><td><span class="verdict hard">Jurisdiction dependent</span></td><td>Biometric and monitoring laws vary widely and shape what is even allowed.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- 09 Ethics -->
+        <section id="ethics" class="reveal">
+          <h2 data-no="09">Privacy, ethics, and law</h2>
+          <p>This is the section that decides whether the product can exist responsibly. Worker monitoring carries
+            real risk of harm and is heavily regulated. The design choices below are not optional features. They are
+            what make the system defensible.</p>
+          <div class="callout callout--warn">
+            <strong>Honest position</strong>
+            <p>A framing built mainly around catching time theft and ranking people invites resentment, legal exposure,
+              and gaming. The version worth building leads with safety and fair pay, gives workers visibility into their
+              own data, and treats constant recording of individuals as a cost to minimize, not a feature to maximize.</p>
+          </div>
+          <ul class="flist">
+            <li><strong>Consent first.</strong> Monitoring should be disclosed, agreed to, and, where the law requires it, negotiated with workers or their representatives. Hidden recording is out.</li>
+            <li><strong>Privacy by design.</strong> Faces are blurred and off-task footage is dropped at the edge. The system stores structured events by default, not raw video of people.</li>
+            <li><strong>Hardware off switch.</strong> The glasses carry a physical shutter the worker controls, for breaks and private moments.</li>
+            <li><strong>Worker access.</strong> Each person can see the data collected about them and contest a score. Transparency is mutual, not one directional.</li>
+            <li><strong>Legal grounding.</strong> Deployments must respect biometric privacy laws, data protection rules, and labor law. These differ by country and state and set hard limits on what is allowed.</li>
+            <li><strong>No automated punishment.</strong> Scores inform human decisions. They should not trigger discipline on their own, and bias in the models has to be tested for and corrected.</li>
+          </ul>
+        </section>
+
+        <!-- 10 Variations -->
+        <section id="variations" class="reveal">
+          <h2 data-no="10">Improvements and variations</h2>
+          <ul class="flist">
+            <li><strong>Safety only edition.</strong> A stripped down version that does PPE and hazard alerts with no productivity scoring at all, for sites that only want injury prevention.</li>
+            <li><strong>Fully on-device processing.</strong> Keep all vision on the edge so raw frames never reach the cloud, which sharply lowers privacy risk.</li>
+            <li><strong>Anonymous mode.</strong> Aggregate site level metrics without identifying individuals, for process improvement rather than individual review.</li>
+            <li><strong>Opt-in gamification.</strong> Workers choose to join a rewards program rather than being enrolled by default.</li>
+            <li><strong>Ergonomic coaching.</strong> Reframe pose data as personal feedback to the worker about lifting and strain, owned by them.</li>
+            <li><strong>Open audit log.</strong> A shared record of who accessed footage and why, so the watchers are accountable too.</li>
+          </ul>
+        </section>
+
+        <!-- 11 Roadmap -->
+        <section id="roadmap" class="reveal">
+          <h2 data-no="11">Prototyping roadmap</h2>
+          <div class="timeline">
+            <div class="phase"><span class="when">PHASE 0 · PROVE</span><h4>PPE detection demo</h4><p class="muted">Use existing cameras and open models to detect hard hats and vests in recorded footage. Measure accuracy honestly.</p></div>
+            <div class="phase"><span class="when">PHASE 1 · PIPELINE</span><h4>Frame to event</h4><p class="muted">Build the privacy gateway and the vision pipeline so video becomes structured events with no raw storage.</p></div>
+            <div class="phase"><span class="when">PHASE 2 · DASHBOARD</span><h4>Manager suite</h4><p class="muted">Turn events into the metrics and safety alerts shown in Figure 3, with full audit logging.</p></div>
+            <div class="phase"><span class="when">PHASE 3 · PILOT</span><h4>Consented site trial</h4><p class="muted">Run a small pilot with informed, consenting workers. Gather feedback on fairness and accuracy, not just output.</p></div>
+            <div class="phase"><span class="when">PHASE 4 · REWARD</span><h4>Payroll integration</h4><p class="muted">Connect verified output to a transparent rewards flow, with legal review per jurisdiction.</p></div>
+          </div>
+        </section>
+
+        <!-- 12 Risks -->
+        <section id="risks" class="reveal">
+          <h2 data-no="12">Risks and open questions</h2>
+          <div class="grid grid-2">
+            <div class="card"><h3>Surveillance backlash</h3><p class="muted">Even a well designed system can feel oppressive. The product lives or dies on whether workers experience it as fair.</p></div>
+            <div class="card"><h3>Measurement bias</h3><p class="muted">Vision models can systematically misread certain people or tasks. Unchecked, that turns into unfair scores.</p></div>
+            <div class="card"><h3>Scope creep</h3><p class="muted">A tool built for safety can drift into constant monitoring. Guardrails have to be built in, not promised.</p></div>
+            <div class="card"><h3>Legal patchwork</h3><p class="muted">What is legal in one place is banned in another. The product needs configurable compliance, not one global setting.</p></div>
+          </div>
+        </section>
+
+        <!-- nav between inventions -->
+        <hr />
+        <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px">
+          <a class="btn btn--ghost" href="visiongrip.html">&larr; Previous: 001 · VisionGrip</a>
+          <a class="btn btn--primary" href="../index.html#inventions">Back to catalog &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a class="brand" href="../index.html"><span class="brand__mark">JR</span><span style="color:#fff">Jay Reddy</span></a>
+          <p>An inventor portfolio documenting concepts at the intersection of artificial intelligence and the physical world.</p>
+        </div>
+        <div class="footer__cols">
+          <div class="footer__col">
+            <h5>Inventions</h5>
+            <a href="visiongrip.html">001 · VisionGrip</a>
+            <a href="productivityflows.html">002 · ProductivityFlows</a>
+            <a href="../index.html#inventions">Full catalog</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; <span data-year>2026</span> Jay Reddy.</span>
+        <span>ProductivityFlows · Invention 002</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

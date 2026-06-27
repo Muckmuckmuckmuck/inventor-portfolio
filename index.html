@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jay Reddy · Inventor Portfolio</title>
+  <meta name="description" content="An engineering inventor portfolio by Jay Reddy. Documented concepts spanning AI-driven prosthetics and computer-vision workforce systems, each with schematics, feasibility analysis, and prototyping plans." />
+  <meta name="author" content="Jay Reddy" />
+  <meta property="og:title" content="Jay Reddy · Inventor Portfolio" />
+  <meta property="og:description" content="Documented inventions with schematics, feasibility analysis, and prototyping plans." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'&gt;&lt;rect width='32' height='32' rx='8' fill='%231f6feb'/&gt;&lt;text x='16' y='22' font-family='monospace' font-size='16' fill='white' text-anchor='middle'&gt;JR&lt;/text&gt;&lt;/svg&gt;" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;550;600;700;750;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav">
+    <div class="wrap nav__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__mark">JR</span>
+        <span>Jay Reddy</span>
+      </a>
+      <button class="nav__toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <nav class="nav__links">
+        <a href="#inventions">Inventions</a>
+        <a href="#about">Inventor</a>
+        <a href="#philosophy">Philosophy</a>
+        <a href="#process">Process</a>
+        <a href="inventions/visiongrip.html">VisionGrip</a>
+        <a href="inventions/productivityflows.html">ProductivityFlows</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="hero__grid" aria-hidden="true"></div>
+    <div class="wrap hero__inner">
+      <p class="eyebrow" style="color:var(--bp-cyan)">Inventor Portfolio</p>
+      <h1>I design systems where artificial intelligence meets the physical world.</h1>
+      <p class="hero__sub">
+        This is a working record of my inventions. Each entry documents the problem, the full design,
+        labeled schematics, a feasibility analysis, and a path to a prototype. The goal is simple. Anyone who
+        opens a page should be able to understand the idea well enough to question it, improve it, or build it.
+      </p>
+      <div class="hero__cta">
+        <a class="btn btn--primary btn--lg" href="#inventions">Browse the inventions</a>
+        <a class="btn btn--ghost btn--lg" href="#about">About the inventor</a>
+      </div>
+      <div class="hero__stats">
+        <div class="hero__stat"><div class="n">2</div><div class="l">Documented today</div></div>
+        <div class="hero__stat"><div class="n">50+</div><div class="l">Target catalog</div></div>
+        <div class="hero__stat"><div class="n">AI + HW</div><div class="l">Software meets hardware</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== INVENTIONS ===================== -->
+  <section class="section" id="inventions">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">The Catalog</p>
+        <h2>Inventions</h2>
+        <p class="lead">Two concepts are fully documented below. This catalog is built to grow toward fifty entries,
+          and every new invention follows the same template so the depth stays consistent.</p>
+      </div>
+
+      <div class="inv-grid">
+
+        <!-- ===== Invention 001 ===== -->
+        <a class="inv-card reveal" href="inventions/visiongrip.html">
+          <div class="inv-card__art">
+            <svg viewBox="0 0 320 160" role="img" aria-label="Prosthetic hand schematic thumbnail">
+              <g class="bp-stroke-soft">
+                <!-- forearm cavity -->
+                <rect x="22" y="92" width="86" height="34" rx="8" class="bp-fill"/>
+                <line x1="40" y1="92" x2="40" y2="126" class="bp-dim"/>
+                <line x1="70" y1="92" x2="70" y2="126" class="bp-dim"/>
+                <!-- wrist -->
+                <circle cx="120" cy="100" r="10" class="bp-fill-2"/>
+                <!-- palm -->
+                <rect x="132" y="74" width="52" height="52" rx="10" class="bp-fill"/>
+                <!-- fingers -->
+                <g class="bp-stroke">
+                  <line x1="186" y1="80" x2="232" y2="60"/><circle cx="232" cy="60" r="4" class="bp-fill-2"/>
+                  <line x1="188" y1="92" x2="240" y2="86"/><circle cx="240" cy="86" r="4" class="bp-fill-2"/>
+                  <line x1="188" y1="104" x2="238" y2="110"/><circle cx="238" cy="110" r="4" class="bp-fill-2"/>
+                  <line x1="184" y1="116" x2="228" y2="130"/><circle cx="228" cy="130" r="4" class="bp-fill-2"/>
+                  <line x1="138" y1="118" x2="120" y2="138"/><circle cx="120" cy="138" r="4" class="bp-fill-2"/>
+                </g>
+              </g>
+              <text x="26" y="40" class="bp-tag">FIG. A</text>
+              <text x="26" y="56" class="bp-label-sm">CAMERA + EMG FUSION</text>
+            </svg>
+          </div>
+          <div class="inv-card__body">
+            <span class="inv-card__no">INVENTION 001</span>
+            <h3>VisionGrip</h3>
+            <p>A context aware prosthetic arm that pairs neural intent sensing with fingertip cameras, so the
+               hand shapes its own grip before it touches an object.</p>
+            <div class="inv-card__foot">
+              <span class="inv-card__link">Open the file &rarr;</span>
+              <span class="tag tag--concept">Concept</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- ===== Invention 002 ===== -->
+        <a class="inv-card reveal" href="inventions/productivityflows.html">
+          <div class="inv-card__art">
+            <svg viewBox="0 0 320 160" role="img" aria-label="System architecture schematic thumbnail">
+              <g>
+                <!-- source nodes -->
+                <rect x="20" y="40" width="58" height="26" rx="5" class="bp-fill"/>
+                <rect x="20" y="92" width="58" height="26" rx="5" class="bp-fill"/>
+                <!-- engine -->
+                <rect x="128" y="58" width="64" height="44" rx="7" class="bp-fill-2"/>
+                <!-- outputs -->
+                <rect x="244" y="34" width="56" height="24" rx="5" class="bp-fill"/>
+                <rect x="244" y="68" width="56" height="24" rx="5" class="bp-fill"/>
+                <rect x="244" y="102" width="56" height="24" rx="5" class="bp-fill"/>
+                <g class="bp-stroke-soft">
+                  <path d="M78 53 H104 V80 H126"/>
+                  <path d="M78 105 H104 V80"/>
+                  <path d="M192 80 H218 V46 H242"/>
+                  <path d="M218 80 H242"/>
+                  <path d="M218 80 V114 H242"/>
+                </g>
+              </g>
+              <text x="20" y="28" class="bp-tag">FIG. A</text>
+              <text x="138" y="84" class="bp-label-sm">CV ENGINE</text>
+            </svg>
+          </div>
+          <div class="inv-card__body">
+            <span class="inv-card__no">INVENTION 002</span>
+            <h3>ProductivityFlows</h3>
+            <p>A computer vision platform that turns job site video into objective safety and productivity
+               signals, with a tamper evident record for liability and a strong privacy framework.</p>
+            <div class="inv-card__foot">
+              <span class="inv-card__link">Open the file &rarr;</span>
+              <span class="tag tag--research">In research</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- ===== Placeholder for the growing catalog ===== -->
+        <div class="inv-card placeholder reveal">
+          <div>
+            <div style="font-family:var(--font-mono); font-size:1.6rem; color:var(--line-2)">003 &rarr; 050</div>
+            <p style="margin:.6rem 0 0">More inventions are in the pipeline. Each one will arrive with the same
+               schematics, feasibility analysis, and build plan.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== INVENTOR / ABOUT ===================== -->
+  <section class="section section--alt" id="about">
+    <div class="wrap">
+      <div class="profile">
+        <aside class="profile__card reveal">
+          <div class="profile__avatar">JR</div>
+          <h3>Jay Reddy</h3>
+          <p class="profile__role">Inventor · Builder · Systems thinker</p>
+          <ul class="profile__meta">
+            <li><span>Focus</span> AI in the physical world</li>
+            <li><span>Domains</span> Biomechanics, enterprise vision</li>
+            <li><span>Catalog</span> 2 documented, 50+ planned</li>
+            <li><span>Method</span> Problem first, then hardware</li>
+          </ul>
+        </aside>
+
+        <div class="reveal">
+          <p class="eyebrow">The Inventor</p>
+          <h2>Bridging cutting edge AI with real, physical applications.</h2>
+          <p class="lead">My work sits at the seam between software intelligence and the hardware it controls,
+            from advanced human biomechanics to enterprise scale operations. I am most interested in problems
+            where good data and good mechanics have to cooperate in real time.</p>
+
+          <h3 style="margin-top:1.6rem">Core competencies</h3>
+          <div class="grid grid-3" style="margin-top:1rem">
+            <div class="card">
+              <div class="icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M2 12h3M19 12h3M12 2v3M12 19v3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>
+              </div>
+              <h3>AI and computer vision</h3>
+              <p class="muted">Using machine learning models to read complex, real time spatial data and turn it into action.</p>
+            </div>
+            <div class="card">
+              <div class="icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 18v2M16 18v2M6 22h12"/></svg>
+              </div>
+              <h3>Enterprise architecture</h3>
+              <p class="muted">Designing scalable platforms that translate raw signals into management grade decisions.</p>
+            </div>
+            <div class="card">
+              <div class="icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h6l2 3h8M4 7v10h16V10M4 7V5a1 1 0 011-1h4l2 2"/></svg>
+              </div>
+              <h3>Hardware to software</h3>
+              <p class="muted">Designing the link between physical sensors and the edge or cloud units that process them.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PHILOSOPHY ===================== -->
+  <section class="section" id="philosophy">
+    <div class="wrap">
+      <div class="grid grid-2" style="align-items:center; gap:48px">
+        <div class="reveal">
+          <p class="eyebrow">Project Philosophy</p>
+          <h2>Use automation to raise what a person can do, not to replace the person.</h2>
+          <p class="lead">Whether the output is a SaaS suite that manages a complex portfolio or hardware that
+            adapts to a human body, the aim stays the same. Use intelligent data processing to lift human capability,
+            keep the measurements honest, and improve how real operations run.</p>
+        </div>
+        <div class="reveal">
+          <ul class="flist">
+            <li><strong>Problem before product.</strong> Every entry opens with the specific failure it is trying to fix, written plainly.</li>
+            <li><strong>Show the mechanism.</strong> A reader should see how the parts connect, not just a marketing summary.</li>
+            <li><strong>Be honest about hard parts.</strong> Each concept names what is proven, what is risky, and what is still unknown.</li>
+            <li><strong>Design for a build.</strong> A feasibility note and a prototyping path keep ideas grounded in reality.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROCESS ===================== -->
+  <section class="section section--ink" id="process">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow" style="color:var(--bp-cyan)">How each entry is built</p>
+        <h2 style="max-width:24ch">Every invention page follows the same eight part structure.</h2>
+      </div>
+      <div class="grid grid-4 reveal">
+        <div class="card" style="background:var(--bp-bg-2); border-color:#16385d; color:#cdd9f0">
+          <span style="font-family:var(--font-mono); color:var(--bp-cyan)">01 / 02</span>
+          <h3 style="color:#fff; margin-top:6px">Title and date</h3>
+          <p style="color:#9fb0cf">A clear name and the date the concept was first written down.</p>
+        </div>
+        <div class="card" style="background:var(--bp-bg-2); border-color:#16385d; color:#cdd9f0">
+          <span style="font-family:var(--font-mono); color:var(--bp-cyan)">03 / 04</span>
+          <h3 style="color:#fff; margin-top:6px">Problem and design</h3>
+          <p style="color:#9fb0cf">The failure being solved, then the full description of how the system works.</p>
+        </div>
+        <div class="card" style="background:var(--bp-bg-2); border-color:#16385d; color:#cdd9f0">
+          <span style="font-family:var(--font-mono); color:var(--bp-cyan)">05 / 06</span>
+          <h3 style="color:#fff; margin-top:6px">Schematics and uses</h3>
+          <p style="color:#9fb0cf">Labeled blueprints and mockups, followed by where the invention applies.</p>
+        </div>
+        <div class="card" style="background:var(--bp-bg-2); border-color:#16385d; color:#cdd9f0">
+          <span style="font-family:var(--font-mono); color:var(--bp-cyan)">07 / 08</span>
+          <h3 style="color:#fff; margin-top:6px">Feasibility and variations</h3>
+          <p style="color:#9fb0cf">An honest read on what is buildable, plus improvements and open questions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a class="brand" href="index.html"><span class="brand__mark">JR</span><span style="color:#fff">Jay Reddy</span></a>
+          <p>An inventor portfolio documenting concepts at the intersection of artificial intelligence and the physical world. Built to grow.</p>
+        </div>
+        <div class="footer__cols">
+          <div class="footer__col">
+            <h5>Inventions</h5>
+            <a href="inventions/visiongrip.html">001 · VisionGrip</a>
+            <a href="inventions/productivityflows.html">002 · ProductivityFlows</a>
+            <a href="#inventions">Full catalog</a>
+          </div>
+          <div class="footer__col">
+            <h5>Portfolio</h5>
+            <a href="#about">The inventor</a>
+            <a href="#philosophy">Philosophy</a>
+            <a href="#process">Process</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; <span data-year>2026</span> Jay Reddy. All concepts and writing are the work of the inventor.</span>
+        <span>Documented for review and academic transfer consideration.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  INVENTION TEMPLATE
+  Copy this file to create invention 003 and beyond.
+  1. Rename it, for example  inventions/myidea.html
+  2. Replace every {{PLACEHOLDER}} below.
+  3. Swap the schematic SVG for your own drawing.
+  4. Add a matching card to index.html (copy an existing .inv-card).
+  Everything else (styles, nav, TOC behavior) works automatically.
+  ============================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{TITLE}} · Invention {{NNN}} · Jay Reddy</title>
+  <meta name="description" content="{{ONE LINE SUMMARY}}" />
+  <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'&gt;&lt;rect width='32' height='32' rx='8' fill='%231f6feb'/&gt;&lt;text x='16' y='22' font-family='monospace' font-size='16' fill='white' text-anchor='middle'&gt;JR&lt;/text&gt;&lt;/svg&gt;" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;550;600;700;750;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="wrap nav__inner">
+      <a class="brand" href="../index.html"><span class="brand__mark">JR</span><span>Jay Reddy</span></a>
+      <button class="nav__toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <nav class="nav__links">
+        <a href="../index.html#inventions">All inventions</a>
+        <a href="../index.html#about">Inventor</a>
+        <a href="visiongrip.html">001 · VisionGrip</a>
+        <a href="productivityflows.html">002 · ProductivityFlows</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="inv-header">
+    <div class="inv-header__grid" aria-hidden="true"></div>
+    <div class="wrap inv-header__inner">
+      <div class="breadcrumb"><a href="../index.html">Catalog</a> / Invention {{NNN}}</div>
+      <h1>{{TITLE}} <span class="codename">// {{short tagline}}</span></h1>
+      <p class="hero__sub" style="margin-top:.6rem">{{One sentence description of what it does.}}</p>
+      <div class="inv-meta">
+        <div><div class="k">Date conceived</div><div class="v">{{Month Year}}</div></div>
+        <div><div class="k">Status</div><div class="v">{{Concept / Prototype}}</div></div>
+        <div><div class="k">Domain</div><div class="v">{{Field}}</div></div>
+        <div><div class="k">Inventor</div><div class="v">Jay Reddy</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section">
+    <div class="wrap doc">
+      <aside class="toc">
+        <h4>On this page</h4>
+        <ol>
+          <li><a href="#overview">01 · Overview</a></li>
+          <li><a href="#problem">02 · The problem</a></li>
+          <li><a href="#description">03 · Detailed description</a></li>
+          <li><a href="#schematics">04 · Schematics and diagrams</a></li>
+          <li><a href="#components">05 · Key components</a></li>
+          <li><a href="#applications">06 · Potential applications</a></li>
+          <li><a href="#feasibility">07 · Technical feasibility</a></li>
+          <li><a href="#variations">08 · Improvements and variations</a></li>
+          <li><a href="#roadmap">09 · Prototyping roadmap</a></li>
+          <li><a href="#risks">10 · Risks and open questions</a></li>
+        </ol>
+      </aside>
+
+      <div class="doc__body">
+        <section id="overview" class="reveal">
+          <h2 data-no="01">Overview</h2>
+          <p class="lead">{{One paragraph that explains the invention in plain language.}}</p>
+          <p>{{Add detail. What does it do, for whom, and why is it different.}}</p>
+        </section>
+
+        <section id="problem" class="reveal">
+          <h2 data-no="02">The problem being solved</h2>
+          <ul class="flist">
+            <li><strong>{{Pain point.}}</strong> {{Explanation.}}</li>
+            <li><strong>{{Pain point.}}</strong> {{Explanation.}}</li>
+          </ul>
+        </section>
+
+        <section id="description" class="reveal">
+          <h2 data-no="03">Detailed description</h2>
+          <h3>1. {{Subsystem}}</h3>
+          <p>{{Describe it.}}</p>
+          <h3>2. {{Subsystem}}</h3>
+          <p>{{Describe it.}}</p>
+        </section>
+
+        <section id="schematics" class="reveal">
+          <h2 data-no="04">Schematics and diagrams</h2>
+          <figure class="figure">
+            <div class="blueprint">
+              <div class="blueprint__title">Fig. 1 · {{Caption}}</div>
+              <div class="blueprint__frame">
+                <!-- Replace this SVG with your own. Reuse the bp-* classes for the blueprint look. -->
+                <svg viewBox="0 0 900 300" role="img" aria-label="{{describe the diagram}}">
+                  <rect x="60" y="110" width="180" height="70" rx="10" class="bp-fill-2"/>
+                  <text x="150" y="150" class="bp-label" text-anchor="middle">{{Block A}}</text>
+                  <rect x="360" y="110" width="180" height="70" rx="10" class="bp-fill"/>
+                  <text x="450" y="150" class="bp-label" text-anchor="middle">{{Block B}}</text>
+                  <rect x="660" y="110" width="180" height="70" rx="10" class="bp-fill-2"/>
+                  <text x="750" y="150" class="bp-label" text-anchor="middle">{{Block C}}</text>
+                  <defs><marker id="tmpl" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0 0 L7 3 L0 6 Z" fill="#add3ff"/></marker></defs>
+                  <g class="bp-stroke-soft" marker-end="url(#tmpl)">
+                    <line x1="240" y1="145" x2="356" y2="145"/>
+                    <line x1="540" y1="145" x2="656" y2="145"/>
+                  </g>
+                </svg>
+              </div>
+              <div class="blueprint__stamp">{{TITLE}} · DWG {{NNN}}-A</div>
+            </div>
+            <figcaption><b>Figure 1.</b> {{Explain what the reader is looking at.}}</figcaption>
+          </figure>
+        </section>
+
+        <section id="components" class="reveal">
+          <h2 data-no="05">Key components</h2>
+          <div class="table-wrap">
+            <table class="spec">
+              <thead><tr><th>Subsystem</th><th>Candidate part</th><th class="mono">Target spec</th><th>Purpose</th></tr></thead>
+              <tbody>
+                <tr><td>{{Part}}</td><td>{{Tech}}</td><td class="mono">{{spec}}</td><td>{{why}}</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="applications" class="reveal">
+          <h2 data-no="06">Potential applications</h2>
+          <ul class="flist">
+            <li><strong>{{Use case.}}</strong> {{Detail.}}</li>
+          </ul>
+        </section>
+
+        <section id="feasibility" class="reveal">
+          <h2 data-no="07">Technical feasibility analysis</h2>
+          <div class="table-wrap">
+            <table class="spec">
+              <thead><tr><th>Element</th><th>Verdict</th><th>Notes</th></tr></thead>
+              <tbody>
+                <tr><td>{{Element}}</td><td><span class="verdict ok">Proven</span></td><td>{{note}}</td></tr>
+                <tr><td>{{Element}}</td><td><span class="verdict mid">Workable</span></td><td>{{note}}</td></tr>
+                <tr><td>{{Element}}</td><td><span class="verdict hard">Hard</span></td><td>{{note}}</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="variations" class="reveal">
+          <h2 data-no="08">Improvements and variations</h2>
+          <ul class="flist">
+            <li><strong>{{Variation.}}</strong> {{Detail.}}</li>
+          </ul>
+        </section>
+
+        <section id="roadmap" class="reveal">
+          <h2 data-no="09">Prototyping roadmap</h2>
+          <div class="timeline">
+            <div class="phase"><span class="when">PHASE 0</span><h4>{{Step}}</h4><p class="muted">{{What you prove first.}}</p></div>
+            <div class="phase"><span class="when">PHASE 1</span><h4>{{Step}}</h4><p class="muted">{{Next.}}</p></div>
+          </div>
+        </section>
+
+        <section id="risks" class="reveal">
+          <h2 data-no="10">Risks and open questions</h2>
+          <div class="grid grid-2">
+            <div class="card"><h3>{{Risk}}</h3><p class="muted">{{Detail.}}</p></div>
+            <div class="card"><h3>{{Risk}}</h3><p class="muted">{{Detail.}}</p></div>
+          </div>
+        </section>
+
+        <hr />
+        <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px">
+          <a class="btn btn--ghost" href="../index.html#inventions">&larr; Back to catalog</a>
+          <a class="btn btn--primary" href="../index.html#inventions">All inventions &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__bottom" style="border:0">
+        <span>&copy; <span data-year>2026</span> Jay Reddy.</span>
+        <span>{{TITLE}} · Invention {{NNN}}</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

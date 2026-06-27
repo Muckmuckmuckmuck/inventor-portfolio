@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Not found · Jay Reddy</title>
+  <!-- Self-contained on purpose: a 404 can fire from any path depth,
+       so it does not rely on the external stylesheet resolving. -->
+  <style>
+    :root { --ink:#0d1b2a; --accent:#1f6feb; }
+    * { box-sizing: border-box; }
+    body { margin:0; min-height:100vh; display:grid; place-items:center; text-align:center;
+           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+           color: var(--ink); background:#fff; padding: 24px; }
+    .eyebrow { font-family: ui-monospace, Menlo, monospace; letter-spacing:.18em; text-transform:uppercase;
+               color: var(--accent); font-size:.8rem; font-weight:600; margin:0 0 .6rem; }
+    h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); margin:0 0 .8rem; letter-spacing:-.02em; }
+    p { color:#41506b; max-width: 48ch; margin:0 auto 1.6rem; line-height:1.6; }
+    a.btn { display:inline-flex; padding:13px 24px; border-radius:10px; background:var(--accent);
+            color:#fff; text-decoration:none; font-weight:650; }
+  </style>
+</head>
+<body>
+  <div>
+    <p class="eyebrow">Error 404</p>
+    <h1>This page is not in the catalog.</h1>
+    <p>The invention you were looking for moved or never existed. Head back to the index and pick one up from there.</p>
+    <a class="btn" href="/">Return to the catalog</a>
+  </div>
+</body>
+</html>
