@@ -366,6 +366,20 @@ table.spec tbody tr:hover { background: var(--paper-2); }
 .bp-amber-t { fill: var(--bp-amber); font-family: var(--font-mono); font-size: 11px; }
 .bp-dim { stroke: var(--bp-line-soft); stroke-dasharray: 4 4; fill: none; }
 
+/* Detailed engineering-drawing classes (dimension lines, balloons, title blocks).
+   Used by the more detailed schematic SVGs so they read as real blueprints. */
+.bp-thin   { stroke: var(--bp-line-soft); stroke-width: .8; fill: none; }
+.bp-med    { stroke: var(--bp-line); stroke-width: 1.5; fill: none; }
+.bp-ctr    { stroke: var(--bp-line-soft); stroke-width: .8; fill: none; stroke-dasharray: 12 3 2 3; }
+.bp-dimln  { stroke: var(--bp-cyan); stroke-width: .8; fill: none; }
+.bp-dimtxt { fill: var(--bp-cyan); font-family: var(--font-mono); font-size: 11px; }
+.bp-balloon   { fill: rgba(10,37,64,.9); stroke: var(--bp-line); stroke-width: 1; }
+.bp-balloon-t { fill: var(--bp-text); font-family: var(--font-mono); font-size: 11px; font-weight: 600; }
+.bp-tb     { fill: var(--bp-text); font-family: var(--font-mono); font-size: 11px; }
+.bp-tb-key { fill: var(--bp-line-soft); font-family: var(--font-mono); font-size: 8px; letter-spacing: .08em; }
+.bp-tb-ln  { stroke: var(--bp-line-soft); stroke-width: 1; fill: none; }
+.bp-note   { fill: var(--bp-line-soft); font-family: var(--font-mono); font-size: 10px; }
+
 /* mockup / dashboard frame */
 .mock { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); background: #fff; }
 .mock__bar { background: var(--paper-2); border-bottom: 1px solid var(--line); padding: 10px 14px; display: flex; align-items: center; gap: 7px; }

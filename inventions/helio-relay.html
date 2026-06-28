@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HelioRelay · Invention 003 · Jay Reddy</title>
+  <meta name="description" content="HelioRelay is a low cost constellation of low Earth orbit reflector satellites that redirect sunlight to farms and solar sites during dawn and dusk. Full design, detailed engineering drawings, honest feasibility analysis, and a prototyping plan." />
+  <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'&gt;&lt;rect width='32' height='32' rx='8' fill='%231f6feb'/&gt;&lt;text x='16' y='22' font-family='monospace' font-size='16' fill='white' text-anchor='middle'&gt;JR&lt;/text&gt;&lt;/svg&gt;" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;550;600;700;750;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav">
+    <div class="wrap nav__inner">
+      <a class="brand" href="../index.html"><span class="brand__mark">JR</span><span>Jay Reddy</span></a>
+      <button class="nav__toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <nav class="nav__links">
+        <a href="../index.html#inventions">All inventions</a>
+        <a href="../index.html#about">Inventor</a>
+        <a href="visiongrip.html">001 · VisionGrip</a>
+        <a href="productivityflows.html">002 · ProductivityFlows</a>
+        <a href="helio-relay.html">003 · HelioRelay</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== HEADER ===================== -->
+  <section class="inv-header">
+    <div class="inv-header__grid" aria-hidden="true"></div>
+    <div class="wrap inv-header__inner">
+      <div class="breadcrumb"><a href="../index.html">Catalog</a> / Invention 003</div>
+      <h1>HelioRelay <span class="codename">// orbital light relay constellation</span></h1>
+      <p class="hero__sub" style="margin-top:.6rem">A low cost fleet of small reflector satellites that send sunlight to farms and solar sites during the dark edges of the day.</p>
+      <div class="inv-meta">
+        <div><div class="k">Date conceived</div><div class="v">June 29, 2026</div></div>
+        <div><div class="k">Status</div><div class="v">Concept · pre-prototype</div></div>
+        <div><div class="k">Domain</div><div class="v">Aerospace · AgriTech · Energy</div></div>
+        <div><div class="k">Inventor</div><div class="v">Jay Reddy</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DOC ===================== -->
+  <div class="section">
+    <div class="wrap doc">
+
+      <!-- TOC -->
+      <aside class="toc">
+        <h4>On this page</h4>
+        <ol>
+          <li><a href="#overview">01 · Overview</a></li>
+          <li><a href="#problem">02 · The problem</a></li>
+          <li><a href="#description">03 · Detailed description</a></li>
+          <li><a href="#schematics">04 · Engineering drawings</a></li>
+          <li><a href="#operation">05 · How a pass works</a></li>
+          <li><a href="#components">06 · Key components</a></li>
+          <li><a href="#applications">07 · Potential applications</a></li>
+          <li><a href="#feasibility">08 · Technical feasibility</a></li>
+          <li><a href="#variations">09 · Improvements and variations</a></li>
+          <li><a href="#roadmap">10 · Prototyping roadmap</a></li>
+          <li><a href="#ethics">11 · Safety, ecology, and law</a></li>
+          <li><a href="#risks">12 · Risks and open questions</a></li>
+        </ol>
+      </aside>
+
+      <!-- BODY -->
+      <div class="doc__body">
+
+        <!-- 01 Overview -->
+        <section id="overview" class="reveal">
+          <h2 data-no="01">Overview</h2>
+          <p class="lead">HelioRelay is a constellation of small, low cost satellites in low Earth orbit. Each one
+            carries a large thin film mirror that catches sunlight and steers it down to a chosen spot on the ground,
+            so a farm or a solar site can keep receiving light after the sun has dropped below its local horizon.</p>
+          <p>The satellites fly in a dawn-dusk orbit that keeps them lit by the sun while the ground below sits in
+            twilight. As a satellite passes over a subscribed site, it angles its mirror to throw a pool of reflected
+            sunlight onto that site for a short window. A fleet of these satellites hands the job from one to the next,
+            so the light at a given farm can be extended through the most useful part of dawn and dusk.</p>
+          <div class="callout callout--note">
+            <strong>What it is, stated plainly</strong>
+            <p>This is not a second sun and it does not try to be. The honest physics, covered in the feasibility
+              section, caps how bright and how sharp the spot can be. HelioRelay is built to do one thing cheaply and
+              well: extend usable light at the edges of the day, for crops that respond to day length and for solar
+              farms that lose money the moment the sun sets.</p>
+          </div>
+        </section>
+
+        <!-- 02 Problem -->
+        <section id="problem" class="reveal">
+          <h2 data-no="02">The problem being solved</h2>
+          <p>Light on the ground runs out at fixed times, and a lot of value is lost in the gap.</p>
+          <ul class="flist">
+            <li><strong>Crops are limited by day length.</strong> Many plants grow and flower on cues from how long the light lasts. In high latitudes and in winter, short days slow growth and shrink the season.</li>
+            <li><strong>Solar farms go dark first and last.</strong> Output collapses at dusk and is slow to start at dawn, exactly when grid demand often peaks. The panels sit idle while the need is high.</li>
+            <li><strong>Greenhouses burn money on grow lights.</strong> Artificial lighting to extend the day is expensive and runs on grid power, which is often fossil fueled.</li>
+            <li><strong>Frost lands in the pre-dawn dip.</strong> The coldest, most damaging moment for many crops is the hour before sunrise, when no sunlight is available to soften it.</li>
+          </ul>
+          <p>HelioRelay attacks the timing problem. The sun is always shining somewhere above the horizon line of
+            space. A mirror in orbit can borrow a little of that light and place it where the ground has run out.</p>
+        </section>
+
+        <!-- 03 Description -->
+        <section id="description" class="reveal">
+          <h2 data-no="03">Detailed description</h2>
+          <p>Each satellite is deliberately simple, because cost per unit is the whole game when you need a fleet. The
+            design is five subsystems wrapped around one big mirror.</p>
+
+          <h3>1. Reflector membrane</h3>
+          <p>A large, very thin film coated with a mirror finish, held flat by light booms under tension. The film is
+            the kind of aluminized polymer already flown on solar sails. It is cheap by the square meter, folds into a
+            small volume for launch, and weighs very little, which keeps the whole satellite light and cheap to loft.</p>
+
+          <h3>2. Spacecraft bus</h3>
+          <p>A small standardized satellite body in the CubeSat class. It holds the avionics, power, and pointing
+            hardware. Standard buses are mass produced, so this is the part of the design that benefits most from
+            buying off the shelf rather than inventing.</p>
+
+          <h3>3. Pointing and attitude control</h3>
+          <p>The hard part of this invention is aiming. The satellite has to rotate so the mirror sends its reflected
+            beam at a specific moving spot on the ground while the satellite itself races overhead. This is done with
+            reaction wheels for fine rotation, a star tracker and GNSS receiver to know exactly where it is and how it
+            is oriented, and small thrusters to hold and adjust the orbit.</p>
+
+          <h3>4. Onboard targeting computer</h3>
+          <p>A small flight computer carries the list of subscribed ground sites and their coordinates. As the
+            satellite approaches a site, it computes the mirror angle that lands the beam on target, accounting for the
+            sun position, the satellite position, and the curve of the Earth, then drives the wheels to hold that aim
+            through the pass.</p>
+
+          <h3>5. Constellation and ground control</h3>
+          <p>No single satellite can light a site for long, so HelioRelay is a fleet. A ground control system tracks
+            every satellite, takes light requests from sites, and schedules which satellite serves which site and when,
+            handing the job along as satellites move in and out of range.</p>
+        </section>
+
+        <!-- 04 Engineering drawings -->
+        <section id="schematics" class="reveal">
+          <h2 data-no="04">Engineering drawings</h2>
+          <p>Four drawings describe the system. The first two are the spacecraft itself, drawn as a general
+            arrangement and an internal cutaway with dimensions and a parts list. The third is the optical and orbital
+            geometry that decides how big and how bright the ground spot can be. The fourth is the constellation and
+            the ground control loop.</p>
+
+          <!-- FIGURE 1 : general arrangement -->
+          <figure class="figure">
+            <div class="blueprint">
+              <div class="blueprint__title">Fig. 1 · Reflector satellite, general arrangement (deployed)</div>
+              <div class="blueprint__frame">
+                <svg viewBox="0 0 1000 660" role="img" aria-label="General arrangement engineering drawing of the HelioRelay reflector satellite, deployed, with plan and elevation views, dimension lines, item balloons, and a title block">
+                  <defs>
+                    <marker id="dimA" markerWidth="11" markerHeight="9" refX="9" refY="3" orient="auto-start-reverse"><path d="M0 3 L9 0 L9 6 Z" fill="#5fe0e6"/></marker>
+                    <pattern id="hatchA" width="7" height="7" patternTransform="rotate(45)" patternUnits="userSpaceOnUse"><line x1="0" y1="0" x2="0" y2="7" stroke="#add3ff" stroke-width="0.6" opacity="0.5"/></pattern>
+                  </defs>
+
+                  <!-- drawing border -->
+                  <rect x="14" y="14" width="972" height="632" class="bp-thin"/>
+
+                  <!-- ===== PLAN VIEW ===== -->
+                  <text x="60" y="50" class="bp-tag">PLAN VIEW</text>
+                  <text x="60" y="64" class="bp-tb-key">DEPLOYED MEMBRANE LOOKING ALONG +Z (SUN SIDE)</text>
+                  <!-- center lines -->
+                  <line x1="240" y1="90" x2="240" y2="350" class="bp-ctr"/>
+                  <line x1="110" y1="220" x2="370" y2="220" class="bp-ctr"/>
+                  <!-- membrane square (tensioned by diagonal booms) -->
+                  <rect x="130" y="110" width="220" height="220" class="bp-med" fill="rgba(95,224,230,.06)"/>
+                  <!-- gore seams -->
+                  <line x1="130" y1="110" x2="350" y2="330" class="bp-thin"/>
+                  <line x1="350" y1="110" x2="130" y2="330" class="bp-thin"/>
+                  <!-- diagonal booms over the seams (heavier) -->
+                  <line x1="130" y1="110" x2="350" y2="330" class="bp-stroke"/>
+                  <line x1="350" y1="110" x2="130" y2="330" class="bp-stroke"/>
+                  <!-- corner tip masses -->
+                  <circle cx="130" cy="110" r="6" class="bp-fill-2"/>
+                  <circle cx="350" cy="110" r="6" class="bp-fill-2"/>
+                  <circle cx="130" cy="330" r="6" class="bp-fill-2"/>
+                  <circle cx="350" cy="330" r="6" class="bp-fill-2"/>
+                  <!-- central hub / bus -->
+                  <rect x="218" y="198" width="44" height="44" rx="3" class="bp-fill"/>
+                  <rect x="218" y="198" width="44" height="44" rx="3" fill="url(#hatchA)"/>
+                  <!-- dimension: overall width 10 000 mm -->
+                  <line x1="130" y1="362" x2="130" y2="332" class="bp-thin"/>
+                  <line x1="350" y1="362" x2="350" y2="332" class="bp-thin"/>
+                  <line x1="130" y1="356" x2="350" y2="356" class="bp-dimln" marker-start="url(#dimA)" marker-end="url(#dimA)"/>
+                  <text x="240" y="351" class="bp-dimtxt" text-anchor="middle">10 000</text>
+                  <!-- dimension: hub 600 mm -->
+                  <line x1="388" y1="198" x2="408" y2="198" class="bp-thin"/>
+                  <line x1="388" y1="242" x2="408" y2="242" class="bp-thin"/>
+                  <line x1="400" y1="198" x2="400" y2="242" class="bp-dimln" marker-start="url(#dimA)" marker-end="url(#dimA)"/>
+                  <text x="404" y="224" class="bp-dimtxt">600</text>
+                  <!-- balloons -->
+                  <g class="bp-balloon"><circle cx="318" cy="150" r="11"/></g><text x="318" y="154" class="bp-balloon-t" text-anchor="middle">1</text>
+                  <line x1="309" y1="158" x2="285" y2="182" class="bp-thin"/>
+                  <g class="bp-balloon"><circle cx="300" cy="290" r="11"/></g><text x="300" y="294" class="bp-balloon-t" text-anchor="middle">2</text>
+                  <g class="bp-balloon"><circle cx="240" cy="220" r="11"/></g><text x="240" y="224" class="bp-balloon-t" text-anchor="middle">3</text>
+                  <g class="bp-balloon"><circle cx="130" cy="110" r="11"/></g><text x="130" y="114" class="bp-balloon-t" text-anchor="middle">4</text>
+
+                  <!-- ===== ELEVATION VIEW ===== -->
+                  <text x="60" y="430" class="bp-tag">ELEVATION (EDGE ON)</text>
+                  <line x1="110" y1="500" x2="430" y2="500" class="bp-ctr"/>
+                  <!-- membrane edge (very thin) -->
+                  <line x1="150" y1="500" x2="330" y2="500" class="bp-med"/>
+                  <!-- bus body on the anti-sun side -->
+                  <rect x="226" y="500" width="28" height="34" class="bp-fill"/>
+                  <rect x="226" y="500" width="28" height="34" fill="url(#hatchA)"/>
+                  <!-- incoming sun rays -->
+                  <g class="bp-amber">
+                    <line x1="150" y1="452" x2="190" y2="498"/>
+                    <line x1="200" y1="452" x2="240" y2="498"/>
+                    <line x1="250" y1="452" x2="290" y2="498"/>
+                  </g>
+                  <text x="150" y="446" class="bp-amber-t">incident sunlight</text>
+                  <!-- reflected rays down-range -->
+                  <g class="bp-dimln">
+                    <line x1="190" y1="502" x2="240" y2="556" marker-end="url(#dimA)"/>
+                    <line x1="240" y1="502" x2="290" y2="556" marker-end="url(#dimA)"/>
+                    <line x1="290" y1="502" x2="340" y2="556" marker-end="url(#dimA)"/>
+                  </g>
+                  <text x="300" y="572" class="bp-dimtxt">reflected beam to ground target</text>
+                  <!-- thickness detail callout -->
+                  <circle cx="330" cy="500" r="16" class="bp-thin"/>
+                  <line x1="344" y1="492" x2="430" y2="455" class="bp-thin"/>
+                  <text x="436" y="450" class="bp-tag">DETAIL B</text>
+                  <text x="436" y="466" class="bp-tb-key">FILM STACK 2.5 µm:</text>
+                  <text x="436" y="480" class="bp-tb-key">ALUMINIUM 0.1 µm / KAPTON 2.4 µm</text>
+                  <!-- bus height dim -->
+                  <line x1="266" y1="500" x2="286" y2="500" class="bp-thin"/>
+                  <line x1="266" y1="534" x2="286" y2="534" class="bp-thin"/>
+                  <line x1="278" y1="500" x2="278" y2="534" class="bp-dimln" marker-start="url(#dimA)" marker-end="url(#dimA)"/>
+                  <text x="292" y="522" class="bp-dimtxt">300</text>
+
+                  <!-- ===== PARTS LIST ===== -->
+                  <text x="600" y="50" class="bp-tag">PARTS LIST</text>
+                  <line x1="600" y1="58" x2="968" y2="58" class="bp-tb-ln"/>
+                  <g class="bp-tb">
+                    <text x="600" y="80">1</text><text x="636" y="80">Aluminized membrane, 100 m², 2.5 µm</text>
+                    <text x="600" y="104">2</text><text x="636" y="104">Diagonal tension boom, CFRP, ×2</text>
+                    <text x="600" y="128">3</text><text x="636" y="128">Central bus, 12U class</text>
+                    <text x="600" y="152">4</text><text x="636" y="152">Corner tip mass + tension cord, ×4</text>
+                  </g>
+                  <line x1="600" y1="170" x2="968" y2="170" class="bp-tb-ln"/>
+                  <text x="600" y="196" class="bp-tb-key">GENERAL NOTES</text>
+                  <g class="bp-note">
+                    <text x="600" y="214">A. ALL DIMENSIONS IN MILLIMETRES UNLESS NOTED.</text>
+                    <text x="600" y="230">B. MEMBRANE REFLECTIVITY ≥ 0.90 OVER 400 to 700 nm.</text>
+                    <text x="600" y="246">C. STOWED ENVELOPE FITS WITHIN 12U (≈ 200 × 200 × 300).</text>
+                    <text x="600" y="262">D. DEPLOYED FLATNESS TOLERANCE: ±1.5° LOCAL SLOPE.</text>
+                  </g>
+
+                  <!-- ===== TITLE BLOCK ===== -->
+                  <rect x="600" y="520" width="368" height="110" class="bp-tb-ln"/>
+                  <line x1="600" y1="556" x2="968" y2="556" class="bp-tb-ln"/>
+                  <line x1="600" y1="593" x2="968" y2="593" class="bp-tb-ln"/>
+                  <line x1="790" y1="520" x2="790" y2="556" class="bp-tb-ln"/>
+                  <line x1="720" y1="593" x2="720" y2="630" class="bp-tb-ln"/>
+                  <line x1="850" y1="593" x2="850" y2="630" class="bp-tb-ln"/>
+                  <text x="610" y="538" class="bp-tb-key">TITLE</text>
+                  <text x="610" y="551" class="bp-tb">HELIORELAY · REFLECTOR SATELLITE</text>
+                  <text x="800" y="538" class="bp-tb-key">INVENTOR</text>
+                  <text x="800" y="551" class="bp-tb">J. REDDY</text>
+                  <text x="610" y="575" class="bp-tb-key">DRAWING TYPE</text>
+                  <text x="610" y="588" class="bp-tb">GENERAL ARRANGEMENT, DEPLOYED</text>
+                  <text x="610" y="612" class="bp-tb-key">DWG NO</text>
+                  <text x="610" y="625" class="bp-tb">HR-003-01</text>
+                  <text x="730" y="612" class="bp-tb-key">REV</text>
+                  <text x="730" y="625" class="bp-tb">A</text>
+                  <text x="860" y="612" class="bp-tb-key">SCALE / SHEET</text>
+                  <text x="860" y="625" class="bp-tb">1:50 · 1 OF 4</text>
+                </svg>
+              </div>
+              <div class="blueprint__stamp">HELIORELAY · HR-003-01</div>
+            </div>
+            <figcaption><b>Figure 1.</b> The deployed satellite. A 10 metre square mirror membrane (item 1) is held
+              flat by two diagonal booms (2) running from a central 12U bus (3) to four corner tip masses (4). The
+              elevation view shows sunlight striking the film and reflecting down toward the ground target. Detail B
+              calls out the film stack, a tenth of a micron of aluminium on a thin polymer backing.</figcaption>
+          </figure>
+
+          <!-- FIGURE 2 : bus cutaway -->
+          <figure class="figure">
+            <div class="blueprint">
+              <div class="blueprint__title">Fig. 2 · Spacecraft bus, internal cutaway</div>
+              <div class="blueprint__frame">
+                <svg viewBox="0 0 1000 520" role="img" aria-label="Internal cutaway of the HelioRelay spacecraft bus showing reaction wheels, star tracker, GNSS, flight computer, battery, thruster, and comms, with item balloons and a parts list">
+                  <defs>
+                    <marker id="dimB" markerWidth="11" markerHeight="9" refX="9" refY="3" orient="auto-start-reverse"><path d="M0 3 L9 0 L9 6 Z" fill="#5fe0e6"/></marker>
+                    <pattern id="hatchB" width="7" height="7" patternTransform="rotate(45)" patternUnits="userSpaceOnUse"><line x1="0" y1="0" x2="0" y2="7" stroke="#add3ff" stroke-width="0.5" opacity="0.35"/></pattern>
+                  </defs>
+                  <rect x="14" y="14" width="972" height="492" class="bp-thin"/>
+                  <text x="60" y="50" class="bp-tag">SECTION A-A · BUS INTERIOR</text>
+
+                  <!-- bus outer shell -->
+                  <rect x="80" y="90" width="360" height="320" rx="8" class="bp-med"/>
+                  <!-- mounting rails -->
+                  <line x1="80" y1="120" x2="440" y2="120" class="bp-thin"/>
+                  <line x1="80" y1="380" x2="440" y2="380" class="bp-thin"/>
+
+                  <!-- internal modules (each a hatched box) -->
+                  <!-- reaction wheel cluster -->
+                  <g>
+                    <rect x="110" y="150" width="120" height="80" rx="4" class="bp-fill"/>
+                    <circle cx="140" cy="190" r="16" class="bp-stroke"/><circle cx="180" cy="175" r="16" class="bp-stroke"/><circle cx="200" cy="210" r="16" class="bp-stroke"/>
+                    <text x="170" y="246" class="bp-label-sm" text-anchor="middle">reaction wheels ×3</text>
+                  </g>
+                  <!-- star tracker -->
+                  <rect x="250" y="150" width="80" height="50" rx="4" class="bp-fill-2"/>
+                  <path d="M330 162 l26 -10 v36 l-26 -10 z" class="bp-stroke"/>
+                  <text x="290" y="180" class="bp-label-sm" text-anchor="middle">star</text>
+                  <text x="290" y="193" class="bp-label-sm" text-anchor="middle">tracker</text>
+                  <!-- flight computer + GNSS -->
+                  <rect x="250" y="214" width="80" height="46" rx="4" class="bp-fill"/>
+                  <rect x="250" y="214" width="80" height="46" rx="4" fill="url(#hatchB)"/>
+                  <text x="290" y="234" class="bp-label-sm" text-anchor="middle">flight CPU</text>
+                  <text x="290" y="248" class="bp-label-sm" text-anchor="middle">+ GNSS</text>
+                  <!-- battery -->
+                  <rect x="110" y="250" width="120" height="50" rx="4" class="bp-fill"/>
+                  <rect x="110" y="250" width="120" height="50" rx="4" fill="url(#hatchB)"/>
+                  <text x="170" y="280" class="bp-label-sm" text-anchor="middle">battery + PMU</text>
+                  <!-- comms -->
+                  <rect x="250" y="276" width="80" height="44" rx="4" class="bp-fill-2"/>
+                  <text x="290" y="302" class="bp-label-sm" text-anchor="middle">S-band radio</text>
+                  <!-- thruster (bottom, exhaust out) -->
+                  <rect x="160" y="320" width="60" height="40" rx="3" class="bp-fill"/>
+                  <path d="M180 360 l-8 26 m16 -26 l8 26 m-12 -26 l0 30" class="bp-amber"/>
+                  <text x="190" y="378" class="bp-amber-t" text-anchor="middle">thruster</text>
+
+                  <!-- membrane attach interface (top) -->
+                  <line x1="200" y1="90" x2="200" y2="60" class="bp-stroke"/><line x1="320" y1="90" x2="320" y2="60" class="bp-stroke"/>
+                  <text x="350" y="72" class="bp-label-sm">membrane boom interface</text>
+
+                  <!-- overall dimensions -->
+                  <line x1="80" y1="430" x2="80" y2="412" class="bp-thin"/>
+                  <line x1="440" y1="430" x2="440" y2="412" class="bp-thin"/>
+                  <line x1="80" y1="424" x2="440" y2="424" class="bp-dimln" marker-start="url(#dimB)" marker-end="url(#dimB)"/>
+                  <text x="260" y="419" class="bp-dimtxt" text-anchor="middle">300</text>
+                  <line x1="458" y1="90" x2="478" y2="90" class="bp-thin"/>
+                  <line x1="458" y1="410" x2="478" y2="410" class="bp-thin"/>
+                  <line x1="470" y1="90" x2="470" y2="410" class="bp-dimln" marker-start="url(#dimB)" marker-end="url(#dimB)"/>
+                  <text x="474" y="252" class="bp-dimtxt">200</text>
+
+                  <!-- balloons -->
+                  <g class="bp-balloon"><circle cx="170" cy="190" r="11"/></g><text x="170" y="194" class="bp-balloon-t" text-anchor="middle">5</text>
+                  <g class="bp-balloon"><circle cx="290" cy="175" r="11"/></g><text x="290" y="179" class="bp-balloon-t" text-anchor="middle">6</text>
+                  <g class="bp-balloon"><circle cx="290" cy="237" r="11"/></g><text x="290" y="241" class="bp-balloon-t" text-anchor="middle">7</text>
+                  <g class="bp-balloon"><circle cx="170" cy="275" r="11"/></g><text x="170" y="279" class="bp-balloon-t" text-anchor="middle">8</text>
+                  <g class="bp-balloon"><circle cx="290" cy="298" r="11"/></g><text x="290" y="302" class="bp-balloon-t" text-anchor="middle">9</text>
+                  <g class="bp-balloon"><circle cx="190" cy="340" r="11"/></g><text x="190" y="344" class="bp-balloon-t" text-anchor="middle">10</text>
+
+                  <!-- parts list -->
+                  <text x="560" y="110" class="bp-tag">PARTS LIST · BUS</text>
+                  <line x1="560" y1="118" x2="968" y2="118" class="bp-tb-ln"/>
+                  <g class="bp-tb">
+                    <text x="560" y="142">5</text><text x="596" y="142">Reaction wheel cluster, 3-axis fine pointing</text>
+                    <text x="560" y="166">6</text><text x="596" y="166">Star tracker, arc-second class</text>
+                    <text x="560" y="190">7</text><text x="596" y="190">Flight computer + GNSS receiver</text>
+                    <text x="560" y="214">8</text><text x="596" y="214">Battery + power management unit</text>
+                    <text x="560" y="238">9</text><text x="596" y="238">S-band radio, command and telemetry</text>
+                    <text x="560" y="262">10</text><text x="596" y="262">Thruster, electric or cold gas, orbit keep</text>
+                  </g>
+                  <line x1="560" y1="280" x2="968" y2="280" class="bp-tb-ln"/>
+                  <text x="560" y="306" class="bp-tb-key">POINTING BUDGET</text>
+                  <g class="bp-note">
+                    <text x="560" y="324">REQUIRED ATTITUDE KNOWLEDGE ......... ≤ 2 mrad</text>
+                    <text x="560" y="340">REQUIRED ATTITUDE CONTROL .......... ≤ 3 mrad</text>
+                    <text x="560" y="356">A 3 mrad SLEW ERROR MOVES THE GROUND</text>
+                    <text x="560" y="372">SPOT BY ≈ 1.6 km AT 550 km ALTITUDE.</text>
+                    <text x="560" y="388">REFLECTION DOUBLES ANGULAR ERROR, SO</text>
+                    <text x="560" y="404">THE TRACKER, NOT THE MIRROR, IS THE DRIVER.</text>
+                  </g>
+                </svg>
+              </div>
+              <div class="blueprint__stamp">HELIORELAY · HR-003-02</div>
+            </div>
+            <figcaption><b>Figure 2.</b> Inside the bus. Reaction wheels (5) do the fine aiming, the star tracker (6)
+              and GNSS (7) tell the satellite exactly where and how it is oriented, and a small thruster (10) keeps the
+              orbit. The note explains why pointing is the design driver: because reflection doubles any aiming error,
+              the star tracker has to be precise to keep the beam on the field.</figcaption>
+          </figure>
+
+          <!-- FIGURE 3 : optical + orbital geometry -->
+          <figure class="figure">
+            <div class="blueprint">
+              <div class="blueprint__title">Fig. 3 · Optical and orbital geometry</div>
+              <div class="blueprint__frame">
+                <svg viewBox="0 0 1000 560" role="img" aria-label="Diagram of orbital geometry showing the sun, the reflector satellite in a dawn-dusk orbit at 550 km, the beam spreading because the sun is not a point source, and the resulting 5 km ground spot at the twilight terminator">
+                  <defs>
+                    <marker id="dimC" markerWidth="11" markerHeight="9" refX="9" refY="3" orient="auto-start-reverse"><path d="M0 3 L9 0 L9 6 Z" fill="#5fe0e6"/></marker>
+                  </defs>
+                  <rect x="14" y="14" width="972" height="532" class="bp-thin"/>
+
+                  <!-- Earth arc (bottom) -->
+                  <path d="M40 540 Q500 360 960 540" class="bp-med"/>
+                  <path d="M40 540 Q500 360 960 540" fill="rgba(173,211,255,.04)"/>
+                  <text x="80" y="520" class="bp-label-sm">EARTH SURFACE</text>
+                  <!-- terminator marker -->
+                  <line x1="500" y1="300" x2="500" y2="430" class="bp-ctr"/>
+                  <text x="508" y="320" class="bp-note">DAY / NIGHT</text>
+                  <text x="508" y="334" class="bp-note">TERMINATOR</text>
+
+                  <!-- sun, upper left -->
+                  <circle cx="110" cy="90" r="34" class="bp-amber" fill="rgba(255,205,107,.10)"/>
+                  <g class="bp-amber"><line x1="110" y1="44" x2="110" y2="30"/><line x1="68" y1="62" x2="58" y2="52"/><line x1="152" y1="62" x2="162" y2="52"/></g>
+                  <text x="110" y="150" class="bp-amber-t" text-anchor="middle">SUN</text>
+                  <text x="110" y="166" class="bp-note" text-anchor="middle">angular Ø 0.53°</text>
+
+                  <!-- satellite at apex of orbit, lit by sun -->
+                  <g transform="translate(560,150)">
+                    <rect x="-46" y="-5" width="92" height="10" class="bp-med" fill="rgba(95,224,230,.10)"/>
+                    <rect x="-8" y="5" width="16" height="16" class="bp-fill"/>
+                  </g>
+                  <text x="560" y="118" class="bp-tag" text-anchor="middle">REFLECTOR SAT</text>
+                  <!-- orbit path -->
+                  <path d="M120 250 Q560 60 1000 250" class="bp-dim"/>
+                  <text x="840" y="150" class="bp-note">DAWN-DUSK ORBIT · h = 550 km</text>
+
+                  <!-- incoming collimated-ish sunlight to sat -->
+                  <g class="bp-amber">
+                    <line x1="150" y1="110" x2="520" y2="146" marker-end="url(#dimC)"/>
+                    <line x1="150" y1="128" x2="520" y2="158" marker-end="url(#dimC)"/>
+                  </g>
+
+                  <!-- reflected beam spreading to ground spot -->
+                  <line x1="556" y1="160" x2="430" y2="430" class="bp-dimln"/>
+                  <line x1="566" y1="160" x2="570" y2="430" class="bp-dimln"/>
+                  <line x1="430" y1="430" x2="570" y2="430" class="bp-med"/>
+                  <!-- spot glow -->
+                  <ellipse cx="500" cy="430" rx="70" ry="12" class="bp-amber" fill="rgba(255,205,107,.14)"/>
+                  <text x="500" y="462" class="bp-amber-t" text-anchor="middle">ILLUMINATED SPOT</text>
+
+                  <!-- divergence angle annotation -->
+                  <path d="M556 200 A 60 60 0 0 0 566 200" class="bp-thin"/>
+                  <text x="600" y="240" class="bp-dimtxt">θ ≈ 0.53° (beam cannot be sharper than the sun)</text>
+
+                  <!-- ground spot dimension -->
+                  <line x1="430" y1="448" x2="430" y2="432" class="bp-thin"/>
+                  <line x1="570" y1="448" x2="570" y2="432" class="bp-thin"/>
+                  <line x1="430" y1="442" x2="570" y2="442" class="bp-dimln" marker-start="url(#dimC)" marker-end="url(#dimC)"/>
+                  <text x="500" y="437" class="bp-dimtxt" text-anchor="middle">≈ 5 km</text>
+
+                  <!-- governing equation box -->
+                  <rect x="640" y="300" width="320" height="150" class="bp-tb-ln" fill="rgba(10,37,64,.5)"/>
+                  <text x="656" y="322" class="bp-tag">GOVERNING RELATIONS</text>
+                  <g class="bp-tb">
+                    <text x="656" y="350">spot Ø  d = h · θ_sun</text>
+                    <text x="656" y="372">d = 550 km × 0.0093 rad ≈ 5.1 km</text>
+                    <text x="656" y="402">power  P = E · A · ρ</text>
+                    <text x="656" y="424">P = 1361 × 100 × 0.9 ≈ 122 kW</text>
+                  </g>
+                  <text x="656" y="444" class="bp-note">spread over the spot ⇒ a faint boost, not full day</text>
+                </svg>
+              </div>
+              <div class="blueprint__stamp">HELIORELAY · HR-003-03</div>
+            </div>
+            <figcaption><b>Figure 3.</b> The physics that sets the limits. Because the sun is a disc and not a point,
+              the reflected beam can never be sharper than about half a degree, so from 550 km the spot is at least
+              five kilometres across. A 100 square metre mirror reflects roughly 122 kW, but spread over a five
+              kilometre spot that is a faint boost, not a second daylight. This is why HelioRelay targets the edges of
+              the day and scales by adding mirror area and satellites, rather than promising full sun.</figcaption>
+          </figure>
+
+          <!-- FIGURE 4 : constellation + ground loop -->
+          <figure class="figure">
+            <div class="blueprint">
+              <div class="blueprint__title">Fig. 4 · Constellation coverage and ground control loop</div>
+              <div class="blueprint__frame">
+                <svg viewBox="0 0 1000 440" role="img" aria-label="Diagram of several satellites handing off illumination over a farm, plus the ground control scheduling loop">
+                  <defs>
+                    <marker id="dimD" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0 0 L7 3 L0 6 Z" fill="#add3ff"/></marker>
+                  </defs>
+                  <rect x="14" y="14" width="972" height="412" class="bp-thin"/>
+                  <text x="60" y="48" class="bp-tag">COVERAGE HANDOFF OVER ONE SITE</text>
+
+                  <!-- ground / farm -->
+                  <path d="M60 330 H600" class="bp-med"/>
+                  <g class="bp-stroke">
+                    <rect x="250" y="312" width="14" height="18"/><rect x="270" y="312" width="14" height="18"/><rect x="290" y="312" width="14" height="18"/>
+                  </g>
+                  <text x="277" y="352" class="bp-label-sm" text-anchor="middle">subscribed farm</text>
+
+                  <!-- three sats along orbit, handing off -->
+                  <path d="M80 150 Q330 70 600 150" class="bp-dim"/>
+                  <g transform="translate(150,150)"><rect x="-22" y="-4" width="44" height="8" class="bp-med" fill="rgba(95,224,230,.10)"/></g>
+                  <g transform="translate(330,120)"><rect x="-22" y="-4" width="44" height="8" class="bp-med" fill="rgba(95,224,230,.10)"/></g>
+                  <g transform="translate(510,150)"><rect x="-22" y="-4" width="44" height="8" class="bp-med" fill="rgba(95,224,230,.10)"/></g>
+                  <text x="150" y="128" class="bp-note" text-anchor="middle">SAT n-1</text>
+                  <text x="330" y="100" class="bp-note" text-anchor="middle">SAT n (active)</text>
+                  <text x="510" y="128" class="bp-note" text-anchor="middle">SAT n+1</text>
+
+                  <!-- beams: active solid, others dashed -->
+                  <line x1="330" y1="128" x2="277" y2="312" class="bp-amber"/>
+                  <line x1="150" y1="156" x2="277" y2="312" class="bp-dim"/>
+                  <line x1="510" y1="156" x2="277" y2="312" class="bp-dim"/>
+                  <text x="360" y="230" class="bp-amber-t">active beam</text>
+                  <text x="120" y="240" class="bp-note">queued</text>
+
+                  <!-- window note -->
+                  <text x="640" y="60" class="bp-tag">CONTROL LOOP</text>
+                  <rect x="640" y="76" width="320" height="44" rx="6" class="bp-fill"/><text x="800" y="103" class="bp-label" text-anchor="middle">Site requests light window</text>
+                  <rect x="640" y="140" width="320" height="44" rx="6" class="bp-fill"/><text x="800" y="167" class="bp-label" text-anchor="middle">Scheduler picks satellites + times</text>
+                  <rect x="640" y="204" width="320" height="44" rx="6" class="bp-fill-2"/><text x="800" y="231" class="bp-label" text-anchor="middle">Uplink target to each satellite</text>
+                  <rect x="640" y="268" width="320" height="44" rx="6" class="bp-fill"/><text x="800" y="295" class="bp-label" text-anchor="middle">Satellite aims + holds through pass</text>
+                  <rect x="640" y="332" width="320" height="44" rx="6" class="bp-fill"/><text x="800" y="359" class="bp-label" text-anchor="middle">Handoff to next satellite</text>
+                  <g class="bp-stroke-soft" marker-end="url(#dimD)">
+                    <line x1="800" y1="120" x2="800" y2="138"/>
+                    <line x1="800" y1="184" x2="800" y2="202"/>
+                    <line x1="800" y1="248" x2="800" y2="266"/>
+                    <line x1="800" y1="312" x2="800" y2="330"/>
+                  </g>
+                  <path d="M640 354 H626 V98 H640" class="bp-dim" marker-end="url(#dimD)"/>
+                  <text x="600" y="220" class="bp-note" transform="rotate(-90 600 220)">repeat each pass</text>
+                </svg>
+              </div>
+              <div class="blueprint__stamp">HELIORELAY · HR-003-04</div>
+            </div>
+            <figcaption><b>Figure 4.</b> Because each satellite is only in useful position for a minute or two, the
+              fleet works as a relay. One satellite lights the field, then hands off to the next as it rises into
+              position. The ground control loop on the right takes a site's light request, schedules the satellites,
+              uplinks the target, and repeats the handoff every pass.</figcaption>
+          </figure>
+        </section>
+
+        <!-- 05 Operation -->
+        <section id="operation" class="reveal">
+          <h2 data-no="05">How a single pass works</h2>
+          <ol>
+            <li>A farm requests a light window, for example the forty minutes before local sunrise during the growing season.</li>
+            <li>The scheduler finds which satellites will fly through a usable geometry over that site in that window, and reserves them.</li>
+            <li>Each chosen satellite receives the site coordinates and the exact times it is responsible for.</li>
+            <li>As a satellite comes into range, its computer works out the mirror angle that lands the beam on the field, and the reaction wheels slew to hold that aim while the satellite moves overhead.</li>
+            <li>The spot sweeps across or sits near the field for a minute or two, then the satellite hands off to the next one rising behind it.</li>
+            <li>Telemetry reports back what was delivered, which feeds billing and the next schedule.</li>
+          </ol>
+          <div class="callout callout--warn">
+            <strong>Honest limit on the window</strong>
+            <p>A satellite at this altitude is only over a given site for a few minutes per pass. Sustained light needs
+              many satellites, so coverage and cost scale together. This is the central trade of the whole system, and
+              it is why the design fights so hard to make each satellite cheap.</p>
+          </div>
+        </section>
+
+        <!-- 06 Components -->
+        <section id="components" class="reveal">
+          <h2 data-no="06">Key components</h2>
+          <p>Targets at the concept stage, chosen to keep the per-satellite cost low by leaning on parts that already
+            exist in the smallsat market.</p>
+          <div class="table-wrap">
+            <table class="spec">
+              <thead><tr><th>Subsystem</th><th>Candidate part</th><th class="mono">Target spec</th><th>Why this choice</th></tr></thead>
+              <tbody>
+                <tr><td>Reflector film</td><td>Aluminized polyimide membrane</td><td class="mono">100 m², 2.5 µm</td><td>Cheap per m², flight proven on solar sails, very low mass</td></tr>
+                <tr><td>Booms</td><td>Carbon fibre roll-out booms</td><td class="mono">~7 m diagonal</td><td>Self deploying, hold the film flat under tension</td></tr>
+                <tr><td>Bus</td><td>12U CubeSat platform</td><td class="mono">~15 to 25 kg</td><td>Mass produced, standard interfaces, low unit cost</td></tr>
+                <tr><td>Attitude control</td><td>Reaction wheels + magnetorquers</td><td class="mono">≤ 3 mrad</td><td>Fine pointing without spending propellant</td></tr>
+                <tr><td>Navigation</td><td>Star tracker + GNSS</td><td class="mono">arc-second class</td><td>Precise enough to keep the beam on a field</td></tr>
+                <tr><td>Orbit keeping</td><td>Electric or cold gas thruster</td><td class="mono">low total impulse</td><td>Holds the orbit and enables safe deorbit</td></tr>
+                <tr><td>Compute</td><td>Radiation tolerant flight CPU</td><td class="mono">onboard targeting</td><td>Solves the aim geometry in real time</td></tr>
+                <tr><td>Comms</td><td>S-band transceiver</td><td class="mono">command + telemetry</td><td>Receives targets, reports delivery</td></tr>
+                <tr><td>Launch</td><td>Rideshare to LEO</td><td class="mono">dawn-dusk SSO</td><td>Lowest cost per kilogram to the right orbit</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- 07 Applications -->
+        <section id="applications" class="reveal">
+          <h2 data-no="07">Potential applications</h2>
+          <div class="grid grid-2">
+            <div>
+              <ul class="flist">
+                <li><strong>Photoperiod extension for crops.</strong> Adding light at the start or end of the day to nudge growth and flowering in plants that respond to day length.</li>
+                <li><strong>Dawn and dusk boost for solar farms.</strong> Stretching the generating window at the exact hours the grid is most stressed.</li>
+                <li><strong>Greenhouse supplement.</strong> Cutting the hours that electric grow lights have to run, which lowers cost and emissions.</li>
+              </ul>
+            </div>
+            <div>
+              <ul class="flist">
+                <li><strong>Frost edge mitigation.</strong> A modest pre-dawn light and warmth boost over orchards on marginal nights.</li>
+                <li><strong>Polar and high latitude sites.</strong> Places where winter days are short stand to gain the most from borrowed light.</li>
+                <li><strong>Disaster and off-grid lighting.</strong> Temporary light over an area that has lost power, scheduled on demand.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- 08 Feasibility -->
+        <section id="feasibility" class="reveal">
+          <h2 data-no="08">Technical feasibility analysis</h2>
+          <p>The pieces have flown before. The Soviet Znamya experiments reflected a moving spot of sunlight onto the
+            night side of Earth in the 1990s, and thin film sails like IKAROS and LightSail proved that large mirror
+            membranes deploy and survive in orbit. So the building blocks are real. What is hard is delivering useful
+            intensity, pointing precisely, and doing both at a price that works.</p>
+          <div class="table-wrap">
+            <table class="spec">
+              <thead><tr><th>Element</th><th>Verdict</th><th>Notes</th></tr></thead>
+              <tbody>
+                <tr><td>Deploying a large thin mirror in LEO</td><td><span class="verdict ok">Flight proven</span></td><td>Solar sail missions have deployed comparable membranes and held them flat.</td></tr>
+                <tr><td>Reflecting a sunlight spot to the ground</td><td><span class="verdict ok">Demonstrated</span></td><td>The Znamya experiments did exactly this, producing a moving lit spot several kilometres across.</td></tr>
+                <tr><td>Precise beam pointing at a moving target</td><td><span class="verdict mid">Achievable, demanding</span></td><td>Needs arc-second navigation and tight attitude control, since reflection doubles any aiming error.</td></tr>
+                <tr><td>Delivering crop-useful intensity</td><td><span class="verdict hard">Physics limited</span></td><td>The spot cannot be sharper than the sun's half degree, so intensity is low. Best used for photoperiod and dawn-dusk boosts, not bulk light.</td></tr>
+                <tr><td>Sustained coverage of a site</td><td><span class="verdict hard">Needs a fleet</span></td><td>Short passes mean many satellites are required for continuous light, which drives total cost.</td></tr>
+                <tr><td>Per-satellite cost</td><td><span class="verdict mid">Trending favourable</span></td><td>Cheap film, standard buses, and rideshare launch all push unit cost down, which is the core bet of the design.</td></tr>
+                <tr><td>Weather</td><td><span class="verdict hard">Unsolved on orbit</span></td><td>Cloud cover blocks the beam. The system is only useful on clear skies, which limits where it pays off.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="callout">
+            <strong>The cost-effective version</strong>
+            <p>The cheap, buildable path is not one giant mirror. It is many small, mass produced satellites, each with
+              a modest membrane and an off the shelf bus, launched as rideshare into a dawn-dusk orbit. Value comes
+              from selling short, scheduled light windows to sites that gain a lot from a little light at the right
+              minute, like solar operators at dusk and high latitude growers in spring. Start with one demonstrator,
+              prove the pointing, then scale the fleet only as paying demand appears.</p>
+          </div>
+        </section>
+
+        <!-- 09 Variations -->
+        <section id="variations" class="reveal">
+          <h2 data-no="09">Improvements and variations</h2>
+          <ul class="flist">
+            <li><strong>Bigger membranes.</strong> Move from a 10 metre to a 30 metre film to raise delivered light by an order of magnitude per satellite, once deployment is trusted.</li>
+            <li><strong>Spectral tuning.</strong> Coat the film to favour the red and blue bands that drive photosynthesis, so more of the delivered light is useful to plants.</li>
+            <li><strong>Shared buses.</strong> Carry the same reflector payload on a standard commercial bus to cut development cost further.</li>
+            <li><strong>Energy first model.</strong> Sell to solar operators before agriculture, since a solar farm turns even faint extra light directly into measurable revenue.</li>
+            <li><strong>Dimmable by design.</strong> Slightly defocus on command to spread a softer, larger spot for crops, or tighten for a brighter, smaller one for energy.</li>
+            <li><strong>Self disposal.</strong> Size the membrane so atmospheric drag pulls a failed satellite down quickly, leaving no long lived debris.</li>
+          </ul>
+        </section>
+
+        <!-- 10 Roadmap -->
+        <section id="roadmap" class="reveal">
+          <h2 data-no="10">Prototyping roadmap</h2>
+          <div class="timeline">
+            <div class="phase"><span class="when">PHASE 0 · MODEL</span><h4>Prove the numbers</h4><p class="muted">Build the full optical and orbital model, confirm spot size, intensity, and pass windows, and find the sites where a little light is worth the most.</p></div>
+            <div class="phase"><span class="when">PHASE 1 · GROUND</span><h4>Deployment and pointing rig</h4><p class="muted">Deploy a film and boom assembly on the ground, and test the aiming software against a moving target on a gimbal. No launch yet.</p></div>
+            <div class="phase"><span class="when">PHASE 2 · DEMO SAT</span><h4>One satellite in orbit</h4><p class="muted">Fly a single demonstrator on rideshare. Measure the real spot on the ground with light sensors, and validate the pointing budget.</p></div>
+            <div class="phase"><span class="when">PHASE 3 · PILOT</span><h4>Small cluster, paying site</h4><p class="muted">A handful of satellites serving one solar farm or research plot, with real delivery data and a real customer.</p></div>
+            <div class="phase"><span class="when">PHASE 4 · SCALE</span><h4>Fleet to match demand</h4><p class="muted">Add satellites only as subscriptions grow, keeping the constellation sized to paying coverage.</p></div>
+          </div>
+        </section>
+
+        <!-- 11 Ethics -->
+        <section id="ethics" class="reveal">
+          <h2 data-no="11">Safety, ecology, and law</h2>
+          <p>Putting light where nature removed it is not a neutral act, and a reflector fleet sits in a sky that many
+            people share. These concerns are part of the design, not an afterthought.</p>
+          <ul class="flist">
+            <li><strong>Astronomy comes first.</strong> Bright reflective satellites can ruin observations. The system must publish its schedule, avoid pointing near observatories, and keep mirrors edge on when not working so they stay dim.</li>
+            <li><strong>Night ecology is fragile.</strong> Artificial light at night disrupts insects, birds, and nocturnal animals. Light windows should be short, targeted, and studied for local effect before they become routine.</li>
+            <li><strong>Eye safety holds by physics.</strong> Because the spot can never exceed natural daylight intensity, it cannot be focused into a harmful beam. That is a built in safety property, not a setting.</li>
+            <li><strong>No new debris.</strong> Satellites must deorbit cleanly at end of life. Low mass film helps, since drag pulls it down and it burns up rather than lingering.</li>
+            <li><strong>Shared sky, shared rules.</strong> Who is allowed to light whose ground, and across which borders, needs clear governance. This is as much a policy problem as an engineering one.</li>
+          </ul>
+        </section>
+
+        <!-- 12 Risks -->
+        <section id="risks" class="reveal">
+          <h2 data-no="12">Risks and open questions</h2>
+          <div class="grid grid-2">
+            <div class="card"><h3>Is the light worth it?</h3><p class="muted">The honest open question. The delivered intensity is low, so the whole idea depends on finding uses where a small, well timed boost still pays. That has to be proven with real data, not assumed.</p></div>
+            <div class="card"><h3>Pointing under real conditions</h3><p class="muted">Holding the beam on a field while moving at orbital speed, through every disturbance, is the toughest engineering risk.</p></div>
+            <div class="card"><h3>Public acceptance of a brighter sky</h3><p class="muted">Astronomers and dark sky advocates have real and reasonable objections. The project has to engage them early or it will be fought.</p></div>
+            <div class="card"><h3>Unit economics at scale</h3><p class="muted">Cheap per satellite still adds up across a fleet. The business only works if short light windows are valuable enough to many sites.</p></div>
+          </div>
+        </section>
+
+        <!-- nav between inventions -->
+        <hr />
+        <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px">
+          <a class="btn btn--ghost" href="productivityflows.html">&larr; Previous: 002 · ProductivityFlows</a>
+          <a class="btn btn--primary" href="../index.html#inventions">Back to catalog &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a class="brand" href="../index.html"><span class="brand__mark">JR</span><span style="color:#fff">Jay Reddy</span></a>
+          <p>An inventor portfolio documenting concepts at the intersection of artificial intelligence and the physical world.</p>
+        </div>
+        <div class="footer__cols">
+          <div class="footer__col">
+            <h5>Inventions</h5>
+            <a href="visiongrip.html">001 · VisionGrip</a>
+            <a href="productivityflows.html">002 · ProductivityFlows</a>
+            <a href="helio-relay.html">003 · HelioRelay</a>
+            <a href="../index.html#inventions">Full catalog</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; <span data-year>2026</span> Jay Reddy.</span>
+        <span>HelioRelay · Invention 003</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
